@@ -27,6 +27,7 @@ public class pnlInicio extends javax.swing.JPanel {
         txtBuscador = new javax.swing.JTextField();
         lblBuscador = new javax.swing.JLabel();
         btnNuevoViaje = new javax.swing.JButton();
+        btnAgregarCiudad = new javax.swing.JButton();
         lblImagen = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(840, 500));
@@ -92,6 +93,15 @@ public class pnlInicio extends javax.swing.JPanel {
         add(btnNuevoViaje);
         btnNuevoViaje.setBounds(50, 190, 130, 40);
 
+        btnAgregarCiudad.setText("Agregar Ciudad");
+        btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarCiudadActionPerformed(evt);
+            }
+        });
+        add(btnAgregarCiudad);
+        btnAgregarCiudad.setBounds(480, 420, 150, 50);
+
         lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondo_inicio_azulado.jpg")));
         lblImagen.setPreferredSize(new java.awt.Dimension(800, 450));
         lblImagen.setVerifyInputWhenFocusTarget(false);
@@ -150,6 +160,14 @@ public class pnlInicio extends javax.swing.JPanel {
         p.setVisible(true);
     }//GEN-LAST:event_lblImagenMouseReleased
 
+    private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
+        PopUp p= new PopUp();
+        p.add(new pnlAgregarCiudad(modelo, p));
+        p.pack();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+    }//GEN-LAST:event_btnAgregarCiudadActionPerformed
+
     private void buscar() {
         if (txtBuscador.getText().length() <= 3) {
             JOptionPane.showMessageDialog(this, "Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda", "Busqueda Vacía", JOptionPane.INFORMATION_MESSAGE);
@@ -161,6 +179,7 @@ public class pnlInicio extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarCiudad;
     private javax.swing.JButton btnNuevoViaje;
     private javax.swing.JLabel lblBuscador;
     private javax.swing.JLabel lblBuscar;

@@ -106,7 +106,8 @@ public class Ciudad implements Serializable {
     }
     
     public void agregarImagen(String ruta){
-        imagenes.add(new javax.swing.ImageIcon(getClass().getResource(ruta)));
+        imagenes.add(new javax.swing.ImageIcon(ruta));
+        //imagenes.add(new javax.swing.ImageIcon(getClass().getResource(ruta))); imagen vieja
     }
 
     public ArrayList<ImageIcon> getImagenes() {
