@@ -23,11 +23,11 @@ public class Ciudad implements Serializable {
     }
 
     public String getDescripcion() {
-        return "";
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = "";
+        this.descripcion = descripcion;
     }
 
     public String getInfoGral() {
@@ -35,7 +35,7 @@ public class Ciudad implements Serializable {
     }
 
     public void setInfoGral(String infoGral) {
-        this.infoGral = "";
+        this.infoGral = infoGral;
     }
    
     public ArrayList<ComercioActividad> getActividades() {
@@ -57,7 +57,7 @@ public class Ciudad implements Serializable {
             case estGastronomico:
                 return estGastronomicos.contains(cA);
             case actividad:
-                return alojamientos.contains(cA);
+                return actividades.contains(cA);
         }
 
         return false;
@@ -69,10 +69,10 @@ public class Ciudad implements Serializable {
                 alojamientos.add(cA);
                 break;
             case estGastronomico:
-               estGastronomicos.add(cA);
+                estGastronomicos.add(cA);
                 break;
             case actividad:
-                alojamientos.add(cA);
+                actividades.add(cA);
                 break;
         }
     }
@@ -88,7 +88,7 @@ public class Ciudad implements Serializable {
     
     public Ciudad(String unNombre, String unaInfo) {
         nombre = unNombre;
-        infoGral = "";
+        infoGral = unaInfo;
         imagenes = new ArrayList<>();
         actividades = new ArrayList<>();
         estGastronomicos = new ArrayList<>();
@@ -106,7 +106,16 @@ public class Ciudad implements Serializable {
     }
     
     public void agregarImagen(String ruta){
-        imagenes.add(new javax.swing.ImageIcon(getClass().getResource(ruta)));
+      //  imagenes.add(new javax.swing.ImageIcon(ruta));
+        imagenes.add(new javax.swing.ImageIcon(getClass().getResource(ruta))); //imagen vieja
+    }
+    
+    public void agregarImagenDesdeRuta(String ruta){
+        try{
+            imagenes.add(new javax.swing.ImageIcon(ruta));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<ImageIcon> getImagenes() {

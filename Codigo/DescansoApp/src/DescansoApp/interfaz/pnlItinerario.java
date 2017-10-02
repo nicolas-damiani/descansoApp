@@ -99,6 +99,8 @@ public class pnlItinerario extends javax.swing.JPanel {
 
         ArrayList<Evento> resultados = viaje.getItinerario();
         Collections.sort(resultados);
+        
+        cantResultados = resultados.size();
 
        
         if (cantResultados > 0) {

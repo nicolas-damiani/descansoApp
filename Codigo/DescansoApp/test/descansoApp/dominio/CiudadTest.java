@@ -2,8 +2,6 @@ package descansoApp.dominio;
 
 import descansoApp.dominio.ComercioActividad;
 import descansoApp.dominio.Ciudad;
-import descansoApp.dominio.Ciudad;
-import descansoApp.dominio.ComercioActividad;
 import descansoApp.herramientas.TipoCA;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;

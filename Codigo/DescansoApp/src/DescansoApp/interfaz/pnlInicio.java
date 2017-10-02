@@ -26,6 +26,8 @@ public class pnlInicio extends javax.swing.JPanel {
         lblBuscar = new javax.swing.JLabel();
         txtBuscador = new javax.swing.JTextField();
         lblBuscador = new javax.swing.JLabel();
+        btnNuevoViaje = new javax.swing.JButton();
+        btnAgregarCiudad = new javax.swing.JButton();
         lblImagen = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(840, 500));
@@ -45,9 +47,9 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(lblNuevoViaje);
-        lblNuevoViaje.setBounds(60, 100, 60, 40);
+        lblNuevoViaje.setBounds(60, 100, 120, 40);
 
-        lblMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnMisViajes.png"))); // NOI18N
+        lblMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnMisViajes.png")));
         lblMisViajes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblMisViajes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -63,7 +65,7 @@ public class pnlInicio extends javax.swing.JPanel {
         add(lblMisViajes);
         lblMisViajes.setBounds(110, 280, 132, 40);
 
-        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Lupa.png"))); // NOI18N
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Lupa.png")));
         lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -71,7 +73,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(lblBuscar);
-        lblBuscar.setBounds(720, 290, 20, 20);
+        lblBuscar.setBounds(640, 220, 20, 20);
 
         txtBuscador.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         txtBuscador.setBorder(null);
@@ -81,15 +83,33 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(txtBuscador);
-        txtBuscador.setBounds(370, 290, 340, 22);
+        txtBuscador.setBounds(290, 220, 340, 22);
 
-        lblBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Buscador.png"))); // NOI18N
+        lblBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Buscador.png")));
         add(lblBuscador);
-        lblBuscador.setBounds(340, 190, 440, 160);
+        lblBuscador.setBounds(200, 130, 440, 160);
 
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/FondoInicio.png"))); // NOI18N
+        btnNuevoViaje.setText("Nuevo Viaje");
+        add(btnNuevoViaje);
+        btnNuevoViaje.setBounds(50, 190, 130, 40);
+
+        btnAgregarCiudad.setText("Agregar Ciudad");
+        btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarCiudadActionPerformed(evt);
+            }
+        });
+        add(btnAgregarCiudad);
+        btnAgregarCiudad.setBounds(480, 420, 150, 50);
+
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondo_inicio_azulado.jpg")));
         lblImagen.setPreferredSize(new java.awt.Dimension(800, 450));
         lblImagen.setVerifyInputWhenFocusTarget(false);
+        lblImagen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblImagenMouseReleased(evt);
+            }
+        });
         add(lblImagen);
         lblImagen.setBounds(0, 0, 840, 500);
     }// </editor-fold>//GEN-END:initComponents
@@ -111,11 +131,7 @@ public class pnlInicio extends javax.swing.JPanel {
     }//GEN-LAST:event_lblMisViajesMouseExited
 
     private void lblNuevoViajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevoViajeMouseClicked
-        PopUp p= new PopUp();
-        p.add(new pnlNuevoViaje(modelo, p, null));
-        p.pack();
-        p.setLocationRelativeTo(null);
-        p.setVisible(true);
+        
     }//GEN-LAST:event_lblNuevoViajeMouseClicked
 
     private void lblMisViajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMisViajesMouseClicked
@@ -136,6 +152,22 @@ public class pnlInicio extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtBuscadorKeyReleased
 
+    private void lblImagenMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenMouseReleased
+        PopUp p= new PopUp();
+        p.add(new pnlNuevoViaje(modelo, p, null));
+        p.pack();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+    }//GEN-LAST:event_lblImagenMouseReleased
+
+    private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
+        PopUp p= new PopUp();
+        p.add(new pnlAgregarCiudad(modelo, p));
+        p.pack();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+    }//GEN-LAST:event_btnAgregarCiudadActionPerformed
+
     private void buscar() {
         if (txtBuscador.getText().length() <= 3) {
             JOptionPane.showMessageDialog(this, "Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda", "Busqueda Vacía", JOptionPane.INFORMATION_MESSAGE);
@@ -147,6 +179,8 @@ public class pnlInicio extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarCiudad;
+    private javax.swing.JButton btnNuevoViaje;
     private javax.swing.JLabel lblBuscador;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblImagen;
