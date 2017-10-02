@@ -9,7 +9,9 @@ import descansoApp.dominio.Ciudad;
 import descansoApp.dominio.ComercioActividad;
 import descansoApp.dominio.Sistema;
 import descansoApp.herramientas.TipoCA;
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +20,9 @@ import javax.swing.JFrame;
 public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private Ciudad ciudad;
     private TipoCA tipoCA;
+    private ArrayList<String> errores;
+    private JFrame miVentana;
+    
 
     /**
      * Creates new form pnlAgregarComercioActividad
@@ -26,7 +31,7 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         initComponents();
         tipoCA = unTipoCA;
         this.ciudad = unaCiudad;
-        
+        miVentana = unContenedor;
     }
 
     /**
@@ -142,10 +147,57 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     }//GEN-LAST:event_tFTelefonoActionPerformed
 
     private void btnGuardarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCAActionPerformed
-        ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());
-        this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);
+        if (verificarCampos()){
+            ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());
+            this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);
+            JOptionPane.showMessageDialog(this, tipoCA+" correctamente agregado");
+            miVentana.dispose();
+            
+        }else{
+            String mensaje = "Debe de completar los siguientes campos: ";
+            for (int i =0;i<errores.size();i++){
+                if (i+1==errores.size()){
+                    mensaje+= errores.get(i) + ".";
+                }else{
+                     mensaje+= errores.get(i) + ", ";
+                }
+            }
+            JOptionPane.showMessageDialog(this, mensaje);
+        }
     }//GEN-LAST:event_btnGuardarCAActionPerformed
 
+    
+    private boolean verificarCampos (){
+        errores = new ArrayList<>();
+        boolean sinErrores = true;
+        
+        if(tFNombre.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Nombre");
+        }if(tFDetalles.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Detalles");
+        }if(tFCategoria.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Categoria");
+        }if(tFHorario.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Horario");
+        }if(tFUbicacion.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Ubicacion");
+        }if(tFTelefono.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Telefono");
+        }if(tFWebLink.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Web Link");
+        } if(tFPrecio.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Precio");
+        } 
+        return sinErrores;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdjuntarImagenes;

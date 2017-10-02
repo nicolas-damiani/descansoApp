@@ -65,8 +65,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
 
         pnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png"))); // NOI18N
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png")));
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolverMouseClicked(evt);
@@ -79,8 +79,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         lblNombreCiudad.setText("Nombre de la Ciudad");
         pnl.add(lblNombreCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, -1, -1));
 
-        lblDondeDorimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeDormir.png"))); // NOI18N
-        lblDondeDorimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDondeDorimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeDormir.png")));
+        lblDondeDorimir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblDondeDorimir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblDondeDorimirMouseClicked(evt);
@@ -94,8 +94,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         });
         pnl.add(lblDondeDorimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 87, -1, -1));
 
-        lblDondeComer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeComer.png"))); // NOI18N
-        lblDondeComer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDondeComer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeComer.png")));
+        lblDondeComer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblDondeComer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblDondeComerMouseClicked(evt);
@@ -109,8 +109,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         });
         pnl.add(lblDondeComer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 87, 150, 30));
 
-        lblQueHacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueHacer.png"))); // NOI18N
-        lblQueHacer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblQueHacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueHacer.png")));
+        lblQueHacer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblQueHacer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblQueHacerMouseClicked(evt);
@@ -124,8 +124,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         });
         pnl.add(lblQueHacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 87, -1, -1));
 
-        lblQueEstaCerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueEstaCerca.png"))); // NOI18N
-        lblQueEstaCerca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblQueEstaCerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueEstaCerca.png")));
+        lblQueEstaCerca.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblQueEstaCerca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblQueEstaCercaMouseClicked(evt);
@@ -142,25 +142,25 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         pnlContenedor.setOpaque(false);
         pnlContenedor.setLayout(null);
 
-        lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriader.png"))); // NOI18N
-        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSiguiente.setIcon(new javax.swing.ImageIcon("D:\\Facultad\\2017\\Ingenieria en sistemas 2\\Repositorio Descanso App\\Codigo\\DescansoApp\\src\\descansoApp\\imagenes\\btnGaleriader.png")); // NOI18N
+        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblSiguienteMouseClicked(evt);
             }
         });
         pnlContenedor.add(lblSiguiente);
-        lblSiguiente.setBounds(420, 700, 0, 20);
+        lblSiguiente.setBounds(420, 700, 26, 20);
 
-        lblAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriaIzq.png"))); // NOI18N
-        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAnterior.setIcon(new javax.swing.ImageIcon("D:\\Facultad\\2017\\Ingenieria en sistemas 2\\Repositorio Descanso App\\Codigo\\DescansoApp\\src\\descansoApp\\imagenes\\btnGaleriaIzq.png")); // NOI18N
+        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAnterior.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAnteriorMouseClicked(evt);
             }
         });
         pnlContenedor.add(lblAnterior);
-        lblAnterior.setBounds(0, 700, 0, 0);
+        lblAnterior.setBounds(0, 700, 26, 21);
 
         lblGaleria.setText(" ");
         lblGaleria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -210,7 +210,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         lblRepercusiones.setBounds(480, 90, 107, 17);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Repercusiones.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Repercusiones.png")));
         jLabel3.setText("jLabel3");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
@@ -231,7 +231,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
 
         pnl.add(pnlContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 140, 780, 840));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/InformacionCiudad.png"))); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/InformacionCiudad.png")));
         pnl.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jScrollPane1.setViewportView(pnl);
