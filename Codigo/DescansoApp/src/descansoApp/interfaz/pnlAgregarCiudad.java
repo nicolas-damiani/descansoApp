@@ -35,6 +35,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         chooser = new JFileChooser();
         modelo = unModelo;
         miVentana = unContenedor;
+        this.ciudad = new Ciudad();
     }
 
     /**
@@ -51,7 +52,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         btnAgregarAlojamiento = new javax.swing.JButton();
         btnAgregarComer = new javax.swing.JButton();
         btnAgregarQueHacer = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAgregarMapa = new javax.swing.JButton();
         tfNombre = new javax.swing.JTextField();
         tfDescripcion = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -80,11 +81,16 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         });
 
         btnAgregarQueHacer.setText("Agregar Que hacer");
-
-        jButton5.setText("Agregar Mapa");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarQueHacer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnAgregarQueHacerActionPerformed(evt);
+            }
+        });
+
+        btnAgregarMapa.setText("Agregar Mapa");
+        btnAgregarMapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarMapaActionPerformed(evt);
             }
         });
 
@@ -131,7 +137,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
                                     .addComponent(tfDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnAgregarMapa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGap(26, 26, 26)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -150,7 +156,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnAdjuntarImagenes)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton5)
+                .addComponent(btnAgregarMapa)
                 .addGap(34, 34, 34)
                 .addComponent(btnGuardarCiudad)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -179,7 +185,6 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         this.ciudad.setNombre(tfNombre.getText());
         this.ciudad.setDescripcion(tfDescripcion.getText());
         this.ciudad.setDescripcion(tfDescripcion.getText());
-        this.ciudad.agregarImagen(route);
         modelo.agregarCiudad(this.ciudad);
     }//GEN-LAST:event_btnGuardarCiudadActionPerformed
 
@@ -193,6 +198,37 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle("choosertitle");
+        chooser.setMultiSelectionEnabled(true);
+        chooser.setAcceptAllFileFilterUsed(false);
+        
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+            System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
+          //  route = chooser.getSelectedFile() + "";
+            File [] files = chooser.getSelectedFiles();
+            for (int i =0;i<files.length;i++){
+                this.ciudad.agregarImagenDesdeRuta(files[i].getPath());
+            }
+            System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
+        } else {
+            System.out.println("No Selection ");
+        }
+        //  File[] filesInDirectory = chooser.getCurrentDirectory().listFiles();
+    }//GEN-LAST:event_btnAdjuntarImagenesActionPerformed
+
+    private void btnAgregarAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAlojamientoActionPerformed
+        PopUp p= new PopUp();
+        
+        p.add(new pnlAgregarComercioActividad(modelo, p, ciudad,TipoCA.alojamiento));
+        p.pack();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+    }//GEN-LAST:event_btnAgregarAlojamientoActionPerformed
+
+    private void btnAgregarMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMapaActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("agregarMapa");
+        chooser.setMultiSelectionEnabled(true);
         chooser.setAcceptAllFileFilterUsed(false);
         
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
@@ -202,16 +238,16 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         } else {
             System.out.println("No Selection ");
         }
-        //  File[] filesInDirectory = chooser.getCurrentDirectory().listFiles();
-    }//GEN-LAST:event_btnAdjuntarImagenesActionPerformed
+    }//GEN-LAST:event_btnAgregarMapaActionPerformed
 
-    private void btnAgregarAlojamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarAlojamientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregarAlojamientoActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void btnAgregarQueHacerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarQueHacerActionPerformed
+        PopUp p= new PopUp();
+        
+        p.add(new pnlAgregarComercioActividad(modelo, p, ciudad,TipoCA.actividad));
+        p.pack();
+        p.setLocationRelativeTo(null);
+        p.setVisible(true);
+    }//GEN-LAST:event_btnAgregarQueHacerActionPerformed
     
     public void actionPerformed(ActionEvent e) {
         //Handle open button action.
@@ -232,9 +268,9 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
     private javax.swing.JButton btnAdjuntarImagenes;
     private javax.swing.JButton btnAgregarAlojamiento;
     private javax.swing.JButton btnAgregarComer;
+    private javax.swing.JButton btnAgregarMapa;
     private javax.swing.JButton btnAgregarQueHacer;
     private javax.swing.JButton btnGuardarCiudad;
-    private javax.swing.JButton jButton5;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea tAInfoGeneral;

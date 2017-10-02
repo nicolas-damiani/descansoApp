@@ -32,6 +32,7 @@
                           <Component id="tFDetalles" max="32767" attributes="0"/>
                           <Component id="tFCategoria" pref="178" max="32767" attributes="0"/>
                           <Component id="tFUbicacion" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tFHorario" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -48,6 +49,8 @@
               <Component id="tFDetalles" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="tFCategoria" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Component id="tFHorario" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="tFUbicacion" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -58,9 +61,9 @@
               <Component id="tFPrecio" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnAdjuntarImagenes" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnGuardarCA" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -115,6 +118,14 @@
     <Component class="javax.swing.JButton" name="btnGuardarCA">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarCAActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tFHorario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Horario"/>
       </Properties>
     </Component>
   </SubComponents>

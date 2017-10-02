@@ -40,7 +40,7 @@
                                   <Component id="tfNombre" min="-2" pref="181" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton5" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="btnAgregarMapa" alignment="1" max="32767" attributes="0"/>
                                   <Component id="btnAdjuntarImagenes" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -68,7 +68,7 @@
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+              <Component id="btnAgregarMapa" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="btnGuardarCiudad" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -111,13 +111,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar Que hacer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarQueHacerActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnAgregarMapa">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar Mapa"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMapaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tfNombre">

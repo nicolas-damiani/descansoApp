@@ -6,6 +6,7 @@
 package descansoApp.interfaz;
 
 import descansoApp.dominio.Ciudad;
+import descansoApp.dominio.ComercioActividad;
 import descansoApp.dominio.Sistema;
 import descansoApp.herramientas.TipoCA;
 import javax.swing.JFrame;
@@ -16,13 +17,15 @@ import javax.swing.JFrame;
  */
 public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private Ciudad ciudad;
+    private TipoCA tipoCA;
 
     /**
      * Creates new form pnlAgregarComercioActividad
      */
-    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor, Ciudad unaCiudad, TipoCA tipoCA) {
+    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor, Ciudad unaCiudad, TipoCA unTipoCA) {
         initComponents();
-        
+        tipoCA = unTipoCA;
+        this.ciudad = unaCiudad;
         
     }
 
@@ -44,6 +47,7 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         tFPrecio = new javax.swing.JTextField();
         btnAdjuntarImagenes = new javax.swing.JButton();
         btnGuardarCA = new javax.swing.JButton();
+        tFHorario = new javax.swing.JTextField();
 
         tFNombre.setText("Nombre");
 
@@ -72,6 +76,13 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
 
         btnGuardarCA.setText("Guardar");
+        btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCAActionPerformed(evt);
+            }
+        });
+
+        tFHorario.setText("Horario");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -91,7 +102,8 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                             .addComponent(tFNombre)
                             .addComponent(tFDetalles)
                             .addComponent(tFCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                            .addComponent(tFUbicacion))))
+                            .addComponent(tFUbicacion)
+                            .addComponent(tFHorario))))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,6 +115,8 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 .addComponent(tFDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tFCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(tFHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
@@ -113,9 +127,9 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAdjuntarImagenes)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addComponent(btnGuardarCA)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -127,12 +141,18 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tFTelefonoActionPerformed
 
+    private void btnGuardarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCAActionPerformed
+        ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());
+        this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);
+    }//GEN-LAST:event_btnGuardarCAActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdjuntarImagenes;
     private javax.swing.JButton btnGuardarCA;
     private javax.swing.JTextField tFCategoria;
     private javax.swing.JTextField tFDetalles;
+    private javax.swing.JTextField tFHorario;
     private javax.swing.JTextField tFNombre;
     private javax.swing.JTextField tFPrecio;
     private javax.swing.JTextField tFTelefono;
