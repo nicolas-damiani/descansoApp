@@ -110,11 +110,7 @@ public class pnlInicio extends javax.swing.JPanel {
     }//GEN-LAST:event_txtBuscadorKeyReleased
 
     private void lblImagenMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenMouseReleased
-        PopUp p= new PopUp();
-        p.add(new pnlNuevoViaje(modelo, p, null));
-        p.pack();
-        p.setLocationRelativeTo(null);
-        p.setVisible(true);
+        
     }//GEN-LAST:event_lblImagenMouseReleased
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed

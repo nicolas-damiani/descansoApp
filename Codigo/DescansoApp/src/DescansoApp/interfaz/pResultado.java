@@ -39,18 +39,24 @@ public class pResultado extends javax.swing.JPanel {
 
         lblDes.setEditable(false);
         lblDes.setColumns(20);
-        lblDes.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
+        lblDes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 14)); // NOI18N
         lblDes.setForeground(new java.awt.Color(255, 255, 255));
         lblDes.setLineWrap(true);
         lblDes.setRows(5);
         lblDes.setWrapStyleWord(true);
         lblDes.setAutoscrolls(false);
         lblDes.setBorder(null);
+        lblDes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblDes.setHighlighter(null);
         lblDes.setOpaque(false);
+        lblDes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDesMouseClicked(evt);
+            }
+        });
         scroll.setViewportView(lblDes);
 
-        lblNombre.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(0, 51, 204));
         lblNombre.setText("Nombre Ciudad");
         lblNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -66,7 +72,7 @@ public class pResultado extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(scroll, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(lblNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addComponent(lblNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(620, 620, 620))
         );
         layout.setVerticalGroup(
@@ -84,6 +90,12 @@ public class pResultado extends javax.swing.JPanel {
         ventana.add(new pnlInformacionCiudad(modelo, ciudad, ventana));
         ventana.pack();
     }//GEN-LAST:event_lblNombreMouseClicked
+
+    private void lblDesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDesMouseClicked
+        ventana.remove(padre);
+        ventana.add(new pnlInformacionCiudad(modelo, ciudad, ventana));
+        ventana.pack();
+    }//GEN-LAST:event_lblDesMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea lblDes;
