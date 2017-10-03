@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,7 +25,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
     private Sistema modelo;
     private JFrame miVentana;
     private JFileChooser chooser;
-    private String route;
+    private ArrayList<String> errores;
     private Ciudad ciudad;
 
     /**
@@ -53,8 +54,8 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         btnAgregarComer = new javax.swing.JButton();
         btnAgregarQueHacer = new javax.swing.JButton();
         btnAgregarMapa = new javax.swing.JButton();
-        tfNombre = new javax.swing.JTextField();
-        tfDescripcion = new javax.swing.JTextField();
+        tFNombre = new javax.swing.JTextField();
+        tFDescripcion = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tAInfoGeneral = new javax.swing.JTextArea();
         btnGuardarCiudad = new javax.swing.JButton();
@@ -94,12 +95,12 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
             }
         });
 
-        tfNombre.setText("Nombre");
+        tFNombre.setText("Nombre");
 
-        tfDescripcion.setText("Descripcion");
-        tfDescripcion.addActionListener(new java.awt.event.ActionListener() {
+        tFDescripcion.setText("Descripcion");
+        tFDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfDescripcionActionPerformed(evt);
+                tFDescripcionActionPerformed(evt);
             }
         });
 
@@ -134,8 +135,8 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
                             .addGap(154, 154, 154)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tfDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tFDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnAgregarMapa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -150,9 +151,9 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(tfDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tFDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnAdjuntarImagenes)))
                 .addGap(18, 18, 18)
@@ -177,15 +178,29 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         p.setVisible(true);
     }//GEN-LAST:event_btnAgregarComerActionPerformed
 
-    private void tfDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDescripcionActionPerformed
+    private void tFDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDescripcionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfDescripcionActionPerformed
+    }//GEN-LAST:event_tFDescripcionActionPerformed
 
     private void btnGuardarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCiudadActionPerformed
-        this.ciudad.setNombre(tfNombre.getText());
-        this.ciudad.setDescripcion(tfDescripcion.getText());
-        this.ciudad.setDescripcion(tfDescripcion.getText());
-        modelo.agregarCiudad(this.ciudad);
+        if (verificarCampos()){
+            this.ciudad.setNombre(tFNombre.getText());
+            this.ciudad.setDescripcion(tFDescripcion.getText());
+            this.ciudad.setDescripcion(tFDescripcion.getText());
+            modelo.agregarCiudad(this.ciudad);
+            JOptionPane.showMessageDialog(this, "Ciudad correctamente agregada.");
+            miVentana.dispose();
+        }else{
+            String mensaje = "Debe de completar los siguientes campos: ";
+            for (int i =0;i<errores.size();i++){
+                if (i+1==errores.size()){
+                    mensaje+= errores.get(i) + ".";
+                }else{
+                     mensaje+= errores.get(i) + ", ";
+                }
+            }
+            JOptionPane.showMessageDialog(this, mensaje);
+        }
     }//GEN-LAST:event_btnGuardarCiudadActionPerformed
 
     private void btnAdjuntarImagenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdjuntarImagenesActionPerformed
@@ -202,13 +217,11 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         chooser.setAcceptAllFileFilterUsed(false);
         
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
           //  route = chooser.getSelectedFile() + "";
             File [] files = chooser.getSelectedFiles();
             for (int i =0;i<files.length;i++){
                 this.ciudad.agregarImagenDesdeRuta(files[i].getPath());
             }
-            System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
         } else {
             System.out.println("No Selection ");
         }
@@ -233,7 +246,6 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
-            route = chooser.getSelectedFile() + "";
             System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
         } else {
             System.out.println("No Selection ");
@@ -249,18 +261,23 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         p.setVisible(true);
     }//GEN-LAST:event_btnAgregarQueHacerActionPerformed
     
-    public void actionPerformed(ActionEvent e) {
-        //Handle open button action.
-        // if (e.getSource() == btnAdjuntarImagenes) {
-        //  int returnVal = fc.showOpenDialog(FileChooserDemo.this);
-
-        //    if (returnVal == JFileChooser.APPROVE_OPTION) {
-        //      File file = fc.getSelectedFile();
-        //This is where a real application would open the file.
-        //    log.append("Opening: " + file.getName() + "." + newline);
-        //  } else {
-        //  log.append("Open command cancelled by user." + newline);
-        //  }
+    
+    
+    private boolean verificarCampos (){
+        errores = new ArrayList<>();
+        boolean sinErrores = true;
+        
+        if(tFNombre.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Nombre");
+        }if(tFDescripcion.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Descripción");
+        }if(tAInfoGeneral.getText().isEmpty()){
+            sinErrores = false;
+           errores.add("Info General");
+        }
+        return sinErrores;
     }
 
 
@@ -274,7 +291,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea tAInfoGeneral;
-    private javax.swing.JTextField tfDescripcion;
-    private javax.swing.JTextField tfNombre;
+    private javax.swing.JTextField tFDescripcion;
+    private javax.swing.JTextField tFNombre;
     // End of variables declaration//GEN-END:variables
 }
