@@ -1,5 +1,6 @@
 package descansoApp.interfaz;
 
+import com.toedter.calendar.JTextFieldDateEditor;
 import java.util.Calendar;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -7,6 +8,7 @@ import descansoApp.dominio.Evento;
 import descansoApp.dominio.Sistema;
 import descansoApp.dominio.Viaje;
 import descansoApp.herramientas.EsNumero;
+import java.util.ArrayList;
 
 public class pnlEvento extends javax.swing.JPanel {
 
@@ -23,6 +25,10 @@ public class pnlEvento extends javax.swing.JPanel {
         modEvento = unEvento;
         ciudad = unaCiudad;
         miVentana = unContenedor;
+        JTextFieldDateEditor editorF = (JTextFieldDateEditor) dChosserFechaF.getDateEditor();
+        editorF.setEditable(false);
+        JTextFieldDateEditor editorI = (JTextFieldDateEditor) dChosserFechaI.getDateEditor();
+        editorI.setEditable(false);
 
         if (modEvento == null) {
             lblEliminar1.setVisible(false);
@@ -212,62 +218,94 @@ public class pnlEvento extends javax.swing.JPanel {
     private void lblGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGuardarMouseClicked
         if (txtNombre.getText().length() > 0 && txtUbicacion.getText().length() > 0 && txtDescripcion.getText().length() > 0
                 && txtHoraIHoras.getText().length() > 0 && txtHoraIMinutos.getText().length() > 0 && txtHoraFHoras.getText().length() > 0
-                && txtHoraFMinutos.getText().length() > 0 && dChosserFechaI != null && dChosserFechaF != null) {
+                && txtHoraFMinutos.getText().length() > 0 && dChosserFechaI.getDate() != null && dChosserFechaF.getDate() != null) {
 
             Evento evento;
+            int pos=-1;
+            ArrayList<Evento> losEventos = viaje.getItinerario();
             if (modEvento == null) {
                 evento = new Evento();
             } else {
                 evento = modEvento;
+                pos = losEventos.indexOf(evento);
             }
 
-            evento.setNombre(txtNombre.getText());
-            evento.setUbicacion(txtUbicacion.getText());
-            evento.setDescripcion(txtDescripcion.getText());
-            evento.setCiudad(ciudad);
-
-            if (!esNumero(txtHoraIHoras.getText()) || !esNumero(txtHoraIMinutos.getText())
-                    || !esNumero(txtHoraFHoras.getText()) || !esNumero(txtHoraFMinutos.getText())) {
-                JOptionPane.showMessageDialog(this, "Formato incorrecto de la hora ingresada.", "Error", JOptionPane.ERROR_MESSAGE);
-
-            } else {
-                int hIHoras = Integer.parseInt(txtHoraIHoras.getText());
-                int hIMinutos = Integer.parseInt(txtHoraIMinutos.getText());
-                int hFHoras = Integer.parseInt(txtHoraFHoras.getText());
-                int hFMinutos = Integer.parseInt(txtHoraFMinutos.getText());
-
-                if ((hIHoras >= 0 && hIHoras <= 23) && (hIMinutos >= 0 && hIMinutos <= 59) && (hFHoras >= 0 && hFHoras <= 23) && (hFMinutos >= 0 && hFMinutos <= 59)) {
-
-                    Calendar cFechaI = dChosserFechaI.getCalendar();
-                    Calendar cFechaF = dChosserFechaF.getCalendar();
-
-                    cFechaI.set(Calendar.HOUR_OF_DAY, hIHoras);
-                    cFechaI.set(Calendar.MINUTE, hIMinutos);
-                    cFechaF.set(Calendar.HOUR_OF_DAY, hFHoras);
-                    cFechaF.set(Calendar.MINUTE, hFMinutos);
-
-                    try {
-                        evento.setFechaHoraI(cFechaI);
-                        evento.setFechaHoraF(cFechaI, cFechaF);
-
-                        if (modEvento == null) {
-                            viaje.agregarEvento(evento);
-                            miVentana.dispose();
-                        } else {
-                            miVentana.remove(this);
-                            miVentana.add(new pnlItinerario(modelo, viaje, miVentana));
-                            miVentana.pack();
-                        }
-
-                    } catch (Exception e) {
-                        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(this, "Formato incorrecto de la hora ingresada", "Error", JOptionPane.ERROR_MESSAGE);
+            String nuevoNombre = txtNombre.getText();
+            Evento eventoAux = new Evento(nuevoNombre, dChosserFechaI.getCalendar(), dChosserFechaF.getCalendar(), "", "", ciudad);
+            boolean existeNombre = false;
+            for (int i = 0; i < losEventos.size(); i++) {
+                if (losEventos.get(i).equals(eventoAux) && i!=pos) {
+                    existeNombre = true;
                 }
             }
+            if (!existeNombre) {
+                evento.setNombre(nuevoNombre);
+                evento.setUbicacion(txtUbicacion.getText());
+                evento.setDescripcion(txtDescripcion.getText());
+                evento.setCiudad(ciudad);
+
+                if (!esNumero(txtHoraIHoras.getText()) || !esNumero(txtHoraIMinutos.getText())
+                        || !esNumero(txtHoraFHoras.getText()) || !esNumero(txtHoraFMinutos.getText())) {
+                    JOptionPane.showMessageDialog(this, "Formato incorrecto de la hora ingresada.", "Error", JOptionPane.ERROR_MESSAGE);
+
+                } else {
+                    int hIHoras = Integer.parseInt(txtHoraIHoras.getText());
+                    int hIMinutos = Integer.parseInt(txtHoraIMinutos.getText());
+                    int hFHoras = Integer.parseInt(txtHoraFHoras.getText());
+                    int hFMinutos = Integer.parseInt(txtHoraFMinutos.getText());
+
+                    if ((hIHoras >= 0 && hIHoras <= 23) && (hIMinutos >= 0 && hIMinutos <= 59) && (hFHoras >= 0 && hFHoras <= 23) && (hFMinutos >= 0 && hFMinutos <= 59)) {
+
+                        Calendar cFechaI = dChosserFechaI.getCalendar();
+                        Calendar cFechaF = dChosserFechaF.getCalendar();
+                        cFechaF.set(Calendar.MILLISECOND, 0);
+                        cFechaF.set(Calendar.SECOND, 0);
+                        cFechaI.set(Calendar.MILLISECOND, 0);
+                        cFechaI.set(Calendar.SECOND, 0);
+
+                        cFechaI.set(Calendar.HOUR_OF_DAY, hIHoras);
+                        cFechaI.set(Calendar.MINUTE, hIMinutos);
+                        cFechaF.set(Calendar.HOUR_OF_DAY, hFHoras);
+                        cFechaF.set(Calendar.MINUTE, hFMinutos);
+
+                        try {
+                            evento.setFechaHoraI(cFechaI);
+                            evento.setFechaHoraF(cFechaI, cFechaF);
+                            if (evento.getFechaHoraI().compareTo(evento.getFechaHoraF()) != 0) {
+
+                                boolean existeEvento = false;
+                                for (int i = 0; i < losEventos.size(); i++) {
+                                    if (Evento.overlappingEvents(evento, losEventos.get(i)) && i!=pos) {
+                                        existeEvento = true;
+                                    }
+                                }
+                                if (!existeEvento) {
+                                    if (modEvento == null) {
+                                        viaje.agregarEvento(evento);
+                                        miVentana.dispose();
+                                    } else {
+                                        miVentana.remove(this);
+                                        miVentana.add(new pnlItinerario(modelo, viaje, miVentana));
+                                        miVentana.pack();
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "El evento coincide con otros eventos del viaje", "Error", JOptionPane.ERROR_MESSAGE);
+                                }
+                            } else {
+                                JOptionPane.showMessageDialog(this, "La fecha y hora de inicio no puede ser igual a la final.", "Error", JOptionPane.ERROR_MESSAGE);
+                            }
+                        } catch (Exception e) {
+                            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Formato incorrecto de la hora ingresada", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }else{
+                JOptionPane.showMessageDialog(miVentana, "Ya existe un evento con ese nombre.", "Datos incorrectos", WIDTH);
+            }
         } else {
-            JOptionPane.showMessageDialog(miVentana, viaje, TOOL_TIP_TEXT_KEY, WIDTH);
+            JOptionPane.showMessageDialog(miVentana, "Por favor ingrese todos los datos.", "Datos incorrectos", WIDTH);
         }
     }//GEN-LAST:event_lblGuardarMouseClicked
 
@@ -284,12 +322,12 @@ public class pnlEvento extends javax.swing.JPanel {
 
         return correcto;
     }
-    
+
     private void lblEliminar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseClicked
         int respuesta = JOptionPane.showConfirmDialog(null, "¿Desea eliminar el evento?", "Eliminar Evento", JOptionPane.OK_CANCEL_OPTION);
         if (respuesta == JOptionPane.OK_OPTION) {
             viaje.eliminarEvento(modEvento);
-            
+
             miVentana.remove(this);
             miVentana.add(new pnlItinerario(modelo, viaje, miVentana));
             miVentana.pack();
@@ -297,7 +335,7 @@ public class pnlEvento extends javax.swing.JPanel {
     }//GEN-LAST:event_lblEliminar1MouseClicked
 
     private void lblEliminar1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseEntered
-        
+
     }//GEN-LAST:event_lblEliminar1MouseEntered
 
     private void lblEliminar1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblEliminar1MouseExited

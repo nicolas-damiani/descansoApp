@@ -17,6 +17,7 @@ public class pnlInicio extends javax.swing.JPanel {
         initComponents();
         modelo = unModelo;
         padre = miPadre;
+        txtBuscador.setText("Fray Bentos");
     }
 
     @SuppressWarnings("unchecked")
@@ -43,13 +44,13 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(lblBuscar);
-        lblBuscar.setBounds(620, 260, 20, 20);
+        lblBuscar.setBounds(610, 230, 30, 30);
 
         txtBuscador.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 18)); // NOI18N
-        txtBuscador.setForeground(new java.awt.Color(204, 204, 204));
+        txtBuscador.setForeground(new java.awt.Color(51, 51, 51));
         txtBuscador.setText("Busque por una ciudad por su nombre");
         txtBuscador.setToolTipText("Busque por una ciudad");
-        txtBuscador.setBorder(null);
+        txtBuscador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtBuscador.setMargin(new java.awt.Insets(2, 12, 2, 2));
         txtBuscador.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -69,7 +70,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(btnNuevoViaje);
-        btnNuevoViaje.setBounds(210, 330, 200, 50);
+        btnNuevoViaje.setBounds(190, 320, 200, 50);
 
         btnAgregarCiudad.setText("Agregar Ciudad");
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +79,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(btnAgregarCiudad);
-        btnAgregarCiudad.setBounds(210, 380, 200, 50);
+        btnAgregarCiudad.setBounds(190, 390, 200, 50);
 
         btnMisViajes.setText("Mis Viajes");
         btnMisViajes.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +88,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(btnMisViajes);
-        btnMisViajes.setBounds(410, 330, 200, 50);
+        btnMisViajes.setBounds(430, 320, 200, 50);
 
         btnAgregarComercioActividad.setText("Agregar Comercio/Actividad");
         btnAgregarComercioActividad.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +97,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComercioActividad);
-        btnAgregarComercioActividad.setBounds(410, 380, 200, 50);
+        btnAgregarComercioActividad.setBounds(430, 390, 200, 50);
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));

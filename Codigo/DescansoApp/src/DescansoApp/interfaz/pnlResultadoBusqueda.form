@@ -24,7 +24,7 @@
           <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnHome.png&quot;))" type="code"/>
         </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursor Por defecto"/>
         </Property>
       </Properties>
       <Events>
@@ -42,7 +42,7 @@
           <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Lupa.png&quot;))" type="code"/>
         </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Cursor Por defecto"/>
         </Property>
       </Properties>
       <Events>
@@ -79,7 +79,7 @@
           <Font name="Arial" size="15" style="0"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="33" green="33" red="33" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="No hay resultados para la b&#xfa;squeda realizada, vuelva a intentarlo ..."/>
       </Properties>
@@ -136,7 +136,7 @@
     <Component class="javax.swing.JLabel" name="lblFondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Fondo.png&quot;))" type="code"/>
+          <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/fondoInicio2.jpg&quot;))" type="code"/>
         </Property>
       </Properties>
       <Constraints>

@@ -37,7 +37,7 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         miVentana = unContenedor;
         miModelo = unModelo;
         cBCiudad.setModel(new DefaultComboBoxModel(unModelo.getListaCiudades().toArray()));
-        String[] tipoCAArray ={"alojamiento", "estGastronomico", "actividad", "otros"};
+        String[] tipoCAArray ={"Alojamiento", "E. Gastronomico", "Actividad", "Otros..."};
         cBTipoCA.setModel(new DefaultComboBoxModel(tipoCAArray));
     }
 
@@ -62,8 +62,13 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         tFHorario = new javax.swing.JTextField();
         cBTipoCA = new javax.swing.JComboBox<>();
         cBCiudad = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tFNombre.setText("Nombre");
+        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 178, 30));
 
         tFDetalles.setText("Detalles");
         tFDetalles.addActionListener(new java.awt.event.ActionListener() {
@@ -71,10 +76,13 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 tFDetallesActionPerformed(evt);
             }
         });
+        add(tFDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 178, 30));
 
         tFCategoria.setText("Categoria");
+        add(tFCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 178, 30));
 
         tFUbicacion.setText("Ubicacion");
+        add(tFUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 178, 30));
 
         tFTelefono.setText("Telefono");
         tFTelefono.addActionListener(new java.awt.event.ActionListener() {
@@ -82,10 +90,18 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 tFTelefonoActionPerformed(evt);
             }
         });
+        add(tFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 178, 30));
 
         tFWebLink.setText("Web");
+        add(tFWebLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 178, 30));
 
         tFPrecio.setText("Precio");
+        tFPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tFPrecioActionPerformed(evt);
+            }
+        });
+        add(tFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 178, 30));
 
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
         btnAdjuntarImagenes.addActionListener(new java.awt.event.ActionListener() {
@@ -93,6 +109,7 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 btnAdjuntarImagenesActionPerformed(evt);
             }
         });
+        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 178, 30));
 
         btnGuardarCA.setText("Guardar");
         btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {
@@ -100,66 +117,24 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 btnGuardarCAActionPerformed(evt);
             }
         });
+        add(btnGuardarCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 178, 30));
 
         tFHorario.setText("Horario");
+        add(tFHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 178, 30));
 
         cBTipoCA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cBTipoCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 178, 30));
 
         cBCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(cBCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 178, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnGuardarCA, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addComponent(tFPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tFTelefono)
-                            .addComponent(tFWebLink, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tFNombre)
-                            .addComponent(tFDetalles)
-                            .addComponent(tFCategoria)
-                            .addComponent(tFUbicacion)
-                            .addComponent(tFHorario, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
-                    .addComponent(cBTipoCA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cBCiudad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(97, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(cBCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cBTipoCA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tFDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tFCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tFHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(tFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAdjuntarImagenes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGuardarCA)
-                .addGap(22, 22, 22))
-        );
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel1.setText("Nuevo Comercio/Actividad");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 310, 40));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanaVertical.jpg"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 530));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tFDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDetallesActionPerformed
@@ -217,6 +192,10 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAdjuntarImagenesActionPerformed
 
+    private void tFPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFPrecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tFPrecioActionPerformed
+
     
     private boolean verificarCampos (){
         errores = new ArrayList<>();
@@ -261,6 +240,8 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardarCA;
     private javax.swing.JComboBox<String> cBCiudad;
     private javax.swing.JComboBox<String> cBTipoCA;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField tFCategoria;
     private javax.swing.JTextField tFDetalles;
     private javax.swing.JTextField tFHorario;

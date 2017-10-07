@@ -32,6 +32,7 @@ public class pnlMisViajes extends javax.swing.JPanel {
         scroll = new javax.swing.JScrollPane();
         pnlResultados = new javax.swing.JPanel();
         lblNoHay = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -46,23 +47,28 @@ public class pnlMisViajes extends javax.swing.JPanel {
         pnlResultados.setLayout(pnlResultadosLayout);
         pnlResultadosLayout.setHorizontalGroup(
             pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGap(0, 468, Short.MAX_VALUE)
         );
         pnlResultadosLayout.setVerticalGroup(
             pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 198, Short.MAX_VALUE)
+            .addGap(0, 228, Short.MAX_VALUE)
         );
 
         scroll.setViewportView(pnlResultados);
 
-        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 340, 190));
 
         lblNoHay.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblNoHay.setForeground(new java.awt.Color(255, 255, 255));
         lblNoHay.setText("No hay viajes guardados!");
         add(lblNoHay, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 90, -1, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/MisViajes.png"))); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 36)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
+        lblTitulo.setText("Mis Viajes");
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 160, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanas.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 280));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -92,6 +98,7 @@ public class pnlMisViajes extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblFondo;
     private javax.swing.JLabel lblNoHay;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlResultados;
     private javax.swing.JScrollPane scroll;
     // End of variables declaration//GEN-END:variables

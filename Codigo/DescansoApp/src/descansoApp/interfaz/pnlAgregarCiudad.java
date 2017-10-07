@@ -56,82 +56,82 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tAInfoGeneral = new javax.swing.JTextArea();
         btnGuardarCiudad = new javax.swing.JButton();
+        lblTitulo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblDescripcion = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
+        setMinimumSize(new java.awt.Dimension(200, 200));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAdjuntarImagenes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
         btnAdjuntarImagenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdjuntarImagenesActionPerformed(evt);
             }
         });
+        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, -1));
 
+        btnAgregarMapa.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnAgregarMapa.setText("Agregar Mapa");
         btnAgregarMapa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarMapaActionPerformed(evt);
             }
         });
+        add(btnAgregarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 141, -1));
 
+        tFNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFNombre.setText("Nombre");
+        tFNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tFNombreActionPerformed(evt);
+            }
+        });
+        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 140, -1));
 
+        tFDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFDescripcion.setText("Descripcion");
         tFDescripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tFDescripcionActionPerformed(evt);
             }
         });
+        add(tFDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 140, -1));
 
         tAInfoGeneral.setColumns(20);
+        tAInfoGeneral.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tAInfoGeneral.setRows(5);
         tAInfoGeneral.setText("Info General");
         jScrollPane1.setViewportView(tAInfoGeneral);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 120));
+
+        btnGuardarCiudad.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnGuardarCiudad.setText("Guardar");
         btnGuardarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCiudadActionPerformed(evt);
             }
         });
+        add(btnGuardarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(btnGuardarCiudad))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tFDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btnAgregarMapa, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(tFDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAdjuntarImagenes)))
-                .addGap(18, 18, 18)
-                .addComponent(btnAgregarMapa)
-                .addGap(18, 18, 18)
-                .addComponent(btnGuardarCiudad)
-                .addGap(53, 53, 53))
-        );
+        lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
+        lblTitulo.setText("Nueva Ciudad");
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 270, 40));
+
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        lblNombre.setText("Nombre:");
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+
+        lblDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        lblDescripcion.setText("Descripción:");
+        add(lblDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanas.jpg"))); // NOI18N
+        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 270));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tFDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDescripcionActionPerformed
@@ -197,6 +197,10 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
             System.out.println("No Selection ");
         }
     }//GEN-LAST:event_btnAgregarMapaActionPerformed
+
+    private void tFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tFNombreActionPerformed
     
     
     
@@ -224,6 +228,10 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardarCiudad;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextArea tAInfoGeneral;
     private javax.swing.JTextField tFDescripcion;
     private javax.swing.JTextField tFNombre;

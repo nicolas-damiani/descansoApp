@@ -40,7 +40,7 @@ public class pResultado extends javax.swing.JPanel {
         lblDes.setEditable(false);
         lblDes.setColumns(20);
         lblDes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 14)); // NOI18N
-        lblDes.setForeground(new java.awt.Color(255, 255, 255));
+        lblDes.setForeground(new java.awt.Color(51, 51, 51));
         lblDes.setLineWrap(true);
         lblDes.setRows(5);
         lblDes.setWrapStyleWord(true);
@@ -57,7 +57,7 @@ public class pResultado extends javax.swing.JPanel {
         scroll.setViewportView(lblDes);
 
         lblNombre.setFont(new java.awt.Font("Leelawadee UI", 1, 18)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(0, 51, 204));
+        lblNombre.setForeground(new java.awt.Color(102, 102, 255));
         lblNombre.setText("Nombre Ciudad");
         lblNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblNombre.addMouseListener(new java.awt.event.MouseAdapter() {

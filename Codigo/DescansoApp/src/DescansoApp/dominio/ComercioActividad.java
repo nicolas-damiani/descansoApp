@@ -148,10 +148,10 @@ public class ComercioActividad implements Serializable, Comparable<ComercioActiv
     
     public static TipoCA getTipoCA(String tipo){
         switch (tipo){
-            case "alojamiento": return TipoCA.alojamiento;
-            case "estGastronomico": return TipoCA.estGastronomico;
-            case "actividad": return TipoCA.actividad;
-            case "otros": return TipoCA.otros;
+            case "Alojamiento": return TipoCA.alojamiento;
+            case "E. Gastronomico": return TipoCA.estGastronomico;
+            case "Actividad": return TipoCA.actividad;
+            case "Otros...": return TipoCA.otros;
         }
         return null;
     }

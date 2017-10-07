@@ -14,7 +14,6 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
 
     public pnlResultadoBusqueda(Sistema unModelo, JFrame unPadre, String palabra) {
         initComponents();
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Fondo.png")));
         pnlResultados.setOpaque(false);
         scroll.setOpaque(false);
         scroll.getViewport().setOpaque(false);
@@ -74,7 +73,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         add(txtBuscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 250, 20));
 
         lblNoHay.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        lblNoHay.setForeground(new java.awt.Color(255, 255, 255));
+        lblNoHay.setForeground(new java.awt.Color(51, 51, 51));
         lblNoHay.setText("No hay resultados para la búsqueda realizada, vuelva a intentarlo ...");
         add(lblNoHay, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 130, -1, -1));
 
@@ -99,7 +98,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
 
         add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 770, 370));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Fondo.png")));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-
 public class Evento implements Serializable, Comparable<Evento> {
 
     private String nombre;
@@ -45,25 +44,24 @@ public class Evento implements Serializable, Comparable<Evento> {
         return fechaHoraI;
     }
 
-    public void setFechaHoraI(Calendar unaFechaHoraI) throws Exception{
+    public void setFechaHoraI(Calendar unaFechaHoraI) throws Exception {
         Calendar aux = (Calendar) unaFechaHoraI.clone();
         Calendar c = soloFecha(Calendar.getInstance());
         aux = soloFecha(aux);
-        
+
         if (aux.compareTo(c) >= 0) {
             c = Calendar.getInstance();
             if (unaFechaHoraI.compareTo(c) >= 0) {
                 this.fechaHoraI = unaFechaHoraI;
 
-
             } else {
-                throw new Exception ("El evento esta programado para hoy, entonces la hora de inicio debe ser mayor a la actual.");
-                
+                throw new Exception("El evento esta programado para hoy, entonces la hora de inicio debe ser mayor a la actual.");
+
             }
 
         } else {
-            throw new Exception ("La fecha de inicio del evento debe ser la actual o una futura.");
-            
+            throw new Exception("La fecha de inicio del evento debe ser la actual o una futura.");
+
         }
     }
 
@@ -71,7 +69,7 @@ public class Evento implements Serializable, Comparable<Evento> {
         return fechaHoraF;
     }
 
-    public void setFechaHoraF(Calendar fechaHoraI, Calendar fechaHoraF) throws Exception{
+    public void setFechaHoraF(Calendar fechaHoraI, Calendar fechaHoraF) throws Exception {
         Calendar auxFInicio = (Calendar) fechaHoraI.clone();
         Calendar auxFFin = (Calendar) fechaHoraF.clone();
 
@@ -83,14 +81,14 @@ public class Evento implements Serializable, Comparable<Evento> {
             if (fechaHoraI.compareTo(fechaHoraF) <= 0) {
                 this.fechaHoraF = fechaHoraF;
             } else {
-                throw new Exception("La hora de finalización debe ser mayor a la hora de inicio del evento."); 
+                throw new Exception("La hora de finalización debe ser mayor a la hora de inicio del evento.");
             }
         } else {
             throw new Exception("La fecha final debe ser mayor a la fecha de inicio.");
         }
     }
-    
-      public Calendar soloFecha(Calendar f) {
+
+    public Calendar soloFecha(Calendar f) {
         f.set(Calendar.HOUR, 0);
         f.set(Calendar.HOUR_OF_DAY, 0);
         f.set(Calendar.MINUTE, 0);
@@ -131,28 +129,28 @@ public class Evento implements Serializable, Comparable<Evento> {
 
         return fI + " - " + nombre + " (" + ubicacion + ")";
     }
-    
+
     public String horaInicioToString() {
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
         String fI = formatter.format(fechaHoraI.getTime());
 
         return fI;
     }
-    
+
     public String fechaInicioToString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String fI = formatter.format(fechaHoraI.getTime());
 
         return fI;
     }
-    
+
     public String horaFinToString() {
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
         String fI = formatter.format(fechaHoraF.getTime());
 
         return fI;
     }
-    
+
     public String fechaFinToString() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String fI = formatter.format(fechaHoraF.getTime());
@@ -167,12 +165,20 @@ public class Evento implements Serializable, Comparable<Evento> {
         if (ev.getNombre().equalsIgnoreCase(this.getNombre())) {
             valido = true;
         }
-        
+
         return valido;
     }
-    
+
     @Override
-    public int compareTo(Evento e){
+    public int compareTo(Evento e) {
         return fechaHoraI.compareTo(e.getFechaHoraI());
+    }
+
+    public static boolean overlappingEvents(Evento evento1, Evento evento2) {
+        if (evento1.getFechaHoraI().compareTo(evento2.getFechaHoraF()) <= 0 && evento1.getFechaHoraF().compareTo(evento2.getFechaHoraI()) >= 0) {
+            return true;
+        }else{
+            return false;
+        }
     }
 }
