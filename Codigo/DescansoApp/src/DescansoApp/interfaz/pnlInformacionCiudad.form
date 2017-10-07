@@ -48,7 +48,7 @@
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnHome.png&quot;))" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -82,7 +82,7 @@
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnDondeDormir.png&quot;))" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -102,7 +102,7 @@
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnDondeComer.png&quot;))" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -122,7 +122,7 @@
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnQueHacer.png&quot;))" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -142,7 +142,7 @@
                   <Connection code="new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnQueEstaCerca.png&quot;))" type="code"/>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -172,11 +172,8 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="lblSiguiente">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="D:\Facultad\2017\Ingenieria en sistemas 2\Repositorio Descanso App\Codigo\DescansoApp\src\descansoApp\imagenes\btnGaleriader.png"/>
-                    </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -190,11 +187,8 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblAnterior">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="D:\Facultad\2017\Ingenieria en sistemas 2\Repositorio Descanso App\Codigo\DescansoApp\src\descansoApp\imagenes\btnGaleriaIzq.png"/>
-                    </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                   </Properties>
                   <Events>

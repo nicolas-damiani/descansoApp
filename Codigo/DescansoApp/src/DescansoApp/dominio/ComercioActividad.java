@@ -123,6 +123,14 @@ public class ComercioActividad implements Serializable, Comparable<ComercioActiv
         imagenes.add(new javax.swing.ImageIcon(getClass().getResource(ruta)));
     }
     
+    public void agregarImagenDesdeRuta(String ruta){
+        try{
+            imagenes.add(new javax.swing.ImageIcon(ruta));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    
     @Override
     public boolean equals(Object obj) {
         boolean valido = false;
@@ -136,5 +144,15 @@ public class ComercioActividad implements Serializable, Comparable<ComercioActiv
     @Override
     public int compareTo(ComercioActividad cA){
         return nombre.compareTo(cA.getNombre());
+    }
+    
+    public static TipoCA getTipoCA(String tipo){
+        switch (tipo){
+            case "alojamiento": return TipoCA.alojamiento;
+            case "estGastronomico": return TipoCA.estGastronomico;
+            case "actividad": return TipoCA.actividad;
+            case "otros": return TipoCA.otros;
+        }
+        return null;
     }
 }

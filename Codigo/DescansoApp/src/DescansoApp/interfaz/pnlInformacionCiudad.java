@@ -142,7 +142,6 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         pnlContenedor.setOpaque(false);
         pnlContenedor.setLayout(null);
 
-        lblSiguiente.setIcon(new javax.swing.ImageIcon("D:\\Facultad\\2017\\Ingenieria en sistemas 2\\Repositorio Descanso App\\Codigo\\DescansoApp\\src\\descansoApp\\imagenes\\btnGaleriader.png")); // NOI18N
         lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -150,9 +149,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
             }
         });
         pnlContenedor.add(lblSiguiente);
-        lblSiguiente.setBounds(420, 700, 26, 20);
+        lblSiguiente.setBounds(420, 700, 0, 20);
 
-        lblAnterior.setIcon(new javax.swing.ImageIcon("D:\\Facultad\\2017\\Ingenieria en sistemas 2\\Repositorio Descanso App\\Codigo\\DescansoApp\\src\\descansoApp\\imagenes\\btnGaleriaIzq.png")); // NOI18N
         lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAnterior.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -160,7 +158,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
             }
         });
         pnlContenedor.add(lblAnterior);
-        lblAnterior.setBounds(0, 700, 26, 21);
+        lblAnterior.setBounds(0, 700, 0, 0);
 
         lblGaleria.setText(" ");
         lblGaleria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -327,7 +325,8 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
 
     private void lblQueEstaCercaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblQueEstaCercaMouseClicked
         padre.remove(this);
-        padre.add(new pnlInicio(modelo, padre));
+        PopUp p = new PopUp();
+        padre.add(new pnlMapas(modelo,this.ciudad, p));
         padre.pack();
     }//GEN-LAST:event_lblQueEstaCercaMouseClicked
 

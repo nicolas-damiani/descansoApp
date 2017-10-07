@@ -9,7 +9,10 @@ import descansoApp.dominio.Ciudad;
 import descansoApp.dominio.ComercioActividad;
 import descansoApp.dominio.Sistema;
 import descansoApp.herramientas.TipoCA;
+import java.io.File;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -22,16 +25,20 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private TipoCA tipoCA;
     private ArrayList<String> errores;
     private JFrame miVentana;
+    private Sistema miModelo;
+    private ArrayList<String> rutasImagenes;
     
 
     /**
      * Creates new form pnlAgregarComercioActividad
      */
-    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor, Ciudad unaCiudad, TipoCA unTipoCA) {
+    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor) {
         initComponents();
-        tipoCA = unTipoCA;
-        this.ciudad = unaCiudad;
         miVentana = unContenedor;
+        miModelo = unModelo;
+        cBCiudad.setModel(new DefaultComboBoxModel(unModelo.getListaCiudades().toArray()));
+        String[] tipoCAArray ={"alojamiento", "estGastronomico", "actividad", "otros"};
+        cBTipoCA.setModel(new DefaultComboBoxModel(tipoCAArray));
     }
 
     /**
@@ -53,6 +60,8 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         btnAdjuntarImagenes = new javax.swing.JButton();
         btnGuardarCA = new javax.swing.JButton();
         tFHorario = new javax.swing.JTextField();
+        cBTipoCA = new javax.swing.JComboBox<>();
+        cBCiudad = new javax.swing.JComboBox<>();
 
         tFNombre.setText("Nombre");
 
@@ -79,6 +88,11 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         tFPrecio.setText("Precio");
 
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
+        btnAdjuntarImagenes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdjuntarImagenesActionPerformed(evt);
+            }
+        });
 
         btnGuardarCA.setText("Guardar");
         btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {
@@ -89,38 +103,48 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
 
         tFHorario.setText("Horario");
 
+        cBTipoCA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        cBCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGuardarCA, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnGuardarCA, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(tFPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tFTelefono)
-                            .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tFWebLink, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(tFNombre)
                             .addComponent(tFDetalles)
-                            .addComponent(tFCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                            .addComponent(tFCategoria)
                             .addComponent(tFUbicacion)
-                            .addComponent(tFHorario))))
-                .addContainerGap(102, Short.MAX_VALUE))
+                            .addComponent(tFHorario, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
+                    .addComponent(cBTipoCA, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cBCiudad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(cBCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cBTipoCA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tFDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tFCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tFHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,9 +156,9 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
                 .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAdjuntarImagenes)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnGuardarCA)
-                .addGap(35, 35, 35))
+                .addGap(22, 22, 22))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,9 +172,18 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
 
     private void btnGuardarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCAActionPerformed
         if (verificarCampos()){
-            ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());
-            this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);
-            JOptionPane.showMessageDialog(this, tipoCA+" correctamente agregado");
+            ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), ComercioActividad.getTipoCA(cBTipoCA.getSelectedItem().toString()), tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());
+            if(this.rutasImagenes.size()>0){
+                for(int i =0; i<this.rutasImagenes.size();i++){
+                    comercioActividad.agregarImagenDesdeRuta(this.rutasImagenes.get(i));
+                }
+            }
+            String nombreCiudad = cBCiudad.getSelectedItem().toString();
+            Ciudad ciudadAux = new Ciudad(nombreCiudad, "");
+            int indiceCiudad = miModelo.getListaCiudades().indexOf(ciudadAux);
+            Ciudad laCiudad = miModelo.getListaCiudades().get(indiceCiudad);
+            laCiudad.agregarComercioActividad(ComercioActividad.getTipoCA(cBTipoCA.getSelectedItem().toString()), comercioActividad);
+            JOptionPane.showMessageDialog(this, ComercioActividad.getTipoCA(cBTipoCA.getSelectedItem().toString())+" correctamente agregado");
             miVentana.dispose();
             
         }else{
@@ -165,6 +198,24 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, mensaje);
         }
     }//GEN-LAST:event_btnGuardarCAActionPerformed
+
+    private void btnAdjuntarImagenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdjuntarImagenesActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new java.io.File("."));
+        chooser.setDialogTitle("choosertitle");
+        chooser.setMultiSelectionEnabled(true);
+        chooser.setAcceptAllFileFilterUsed(false);
+        rutasImagenes = new ArrayList<>();
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+          //  route = chooser.getSelectedFile() + "";
+            File [] files = chooser.getSelectedFiles();
+            for (int i =0;i<files.length;i++){
+                this.rutasImagenes.add(files[i].getPath());
+            }
+        } else {
+            System.out.println("No Selection ");
+        }
+    }//GEN-LAST:event_btnAdjuntarImagenesActionPerformed
 
     
     private boolean verificarCampos (){
@@ -195,13 +246,21 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         } if(tFPrecio.getText().isEmpty()){
             sinErrores = false;
            errores.add("Precio");
-        } 
+        } if(cBCiudad.getSelectedItem().toString().compareTo("Seleccionar Ciudad")==0){
+            sinErrores = false;
+            errores.add("Ciudad");
+        } if(cBTipoCA.getSelectedItem().toString().compareTo("Tipo de Comercio/Actividad")==0){
+            sinErrores = false;
+            errores.add("ComercioActividad");
+        }
         return sinErrores;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdjuntarImagenes;
     private javax.swing.JButton btnGuardarCA;
+    private javax.swing.JComboBox<String> cBCiudad;
+    private javax.swing.JComboBox<String> cBTipoCA;
     private javax.swing.JTextField tFCategoria;
     private javax.swing.JTextField tFDetalles;
     private javax.swing.JTextField tFHorario;

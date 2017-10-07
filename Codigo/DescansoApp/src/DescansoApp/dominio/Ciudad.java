@@ -9,6 +9,7 @@ public class Ciudad implements Serializable {
     private String nombre;
     private String descripcion;
     private String infoGral;
+    private ImageIcon mapa;
     private ArrayList<ImageIcon> imagenes;
     private ArrayList<ComercioActividad> actividades;
     private ArrayList<ComercioActividad> estGastronomicos;
@@ -48,6 +49,11 @@ public class Ciudad implements Serializable {
 
     public ArrayList<ComercioActividad> getAlojamientos() {
         return alojamientos;
+    }
+
+    @Override
+    public String toString() {
+        return  nombre;
     }
     
     public boolean perteneceComercioActividad(TipoCA tipo, ComercioActividad cA){
@@ -120,5 +126,22 @@ public class Ciudad implements Serializable {
 
     public ArrayList<ImageIcon> getImagenes() {
         return imagenes;
+    }
+    
+    public void agregarMapa(String ruta){
+        try{
+            mapa = new javax.swing.ImageIcon(ruta);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    public ImageIcon getMapa(){
+        try{
+            return this.mapa;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }

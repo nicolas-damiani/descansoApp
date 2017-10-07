@@ -2,6 +2,7 @@ package descansoApp.interfaz;
 
 import javax.swing.JFrame;
 import descansoApp.dominio.Sistema;
+import javax.swing.JLabel;
 
 public class pnlMapas extends javax.swing.JPanel {
     private Sistema modelo;
@@ -13,7 +14,8 @@ public class pnlMapas extends javax.swing.JPanel {
         modelo = unModelo;
         ciudad = unaCiudad;
         padre = unPadre;
-        
+        JLabel mapa = new JLabel(unaCiudad.getMapa());
+        mapa.setSize(100, 100);
         lblTitulo.setText("Mapa de " + ciudad.getNombre());
     }
 
@@ -23,14 +25,13 @@ public class pnlMapas extends javax.swing.JPanel {
     private void initComponents() {
 
         lblVolver = new javax.swing.JLabel();
-        lblMapa = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png"))); // NOI18N
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png")));
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolverMouseClicked(evt);
@@ -38,15 +39,12 @@ public class pnlMapas extends javax.swing.JPanel {
         });
         add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 38, 30, 30));
 
-        lblMapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/mapaaa.jpg"))); // NOI18N
-        add(lblMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 88, 810, 400));
-
         lblTitulo.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(51, 51, 51));
         lblTitulo.setText("Mapa de Fray Bentos");
         add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, 267, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Fondo.png"))); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -58,7 +56,6 @@ public class pnlMapas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblMapa;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblVolver;
     // End of variables declaration//GEN-END:variables
