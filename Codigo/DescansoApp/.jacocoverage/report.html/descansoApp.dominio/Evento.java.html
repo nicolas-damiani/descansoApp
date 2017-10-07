@@ -42,7 +42,7 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
 <span class="fc" id="L42">    }</span>
 
     public Calendar getFechaHoraI() {
-<span class="nc" id="L45">        return fechaHoraI;</span>
+<span class="fc" id="L45">        return fechaHoraI;</span>
     }
 
     public void setFechaHoraI(Calendar unaFechaHoraI) throws Exception{
@@ -52,8 +52,8 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
         
 <span class="fc bfc" id="L53" title="All 2 branches covered.">        if (aux.compareTo(c) &gt;= 0) {</span>
 <span class="fc" id="L54">            c = Calendar.getInstance();</span>
-<span class="pc bpc" id="L55" title="1 of 2 branches missed.">            if (unaFechaHoraI.compareTo(c) &gt;= 0) {</span>
-<span class="nc" id="L56">                this.fechaHoraI = unaFechaHoraI;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            if (unaFechaHoraI.compareTo(c) &gt;= 0) {</span>
+<span class="fc" id="L56">                this.fechaHoraI = unaFechaHoraI;</span>
 
 
             } else {
@@ -65,7 +65,7 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
 <span class="fc" id="L65">            throw new Exception (&quot;La fecha de inicio del evento debe ser la actual o una futura.&quot;);</span>
             
         }
-<span class="nc" id="L68">    }</span>
+<span class="fc" id="L68">    }</span>
 
     public Calendar getFechaHoraF() {
 <span class="fc" id="L71">        return fechaHoraF;</span>
@@ -83,10 +83,10 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
 <span class="fc bfc" id="L83" title="All 2 branches covered.">            if (fechaHoraI.compareTo(fechaHoraF) &lt;= 0) {</span>
 <span class="fc" id="L84">                this.fechaHoraF = fechaHoraF;</span>
             } else {
-<span class="fc" id="L86">                throw new Exception(&quot;La hora de inicio debe ser mayor a la hora de inicio del evento.&quot;); </span>
+<span class="fc" id="L86">                throw new Exception(&quot;La hora de finalización debe ser mayor a la hora de inicio del evento.&quot;); </span>
             }
         } else {
-<span class="fc" id="L89">            throw new Exception(&quot;La fecha de inicio del evento debe ser la actual o una futura.&quot;);</span>
+<span class="fc" id="L89">            throw new Exception(&quot;La fecha final debe ser mayor a la fecha de inicio.&quot;);</span>
         }
 <span class="fc" id="L91">    }</span>
     
@@ -126,24 +126,24 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
 
     @Override
     public String toString() {
-<span class="nc" id="L129">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;HH:mm&quot;);</span>
-<span class="nc" id="L130">        String fI = formatter.format(fechaHoraI.getTime());</span>
+<span class="fc" id="L129">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;HH:mm&quot;);</span>
+<span class="fc" id="L130">        String fI = formatter.format(fechaHoraI.getTime());</span>
 
-<span class="nc" id="L132">        return fI + &quot; - &quot; + nombre + &quot; (&quot; + ubicacion + &quot;)&quot;;</span>
+<span class="fc" id="L132">        return fI + &quot; - &quot; + nombre + &quot; (&quot; + ubicacion + &quot;)&quot;;</span>
     }
     
     public String horaInicioToString() {
-<span class="nc" id="L136">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;HH:mm&quot;);</span>
-<span class="nc" id="L137">        String fI = formatter.format(fechaHoraI.getTime());</span>
+<span class="fc" id="L136">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;HH:mm&quot;);</span>
+<span class="fc" id="L137">        String fI = formatter.format(fechaHoraI.getTime());</span>
 
-<span class="nc" id="L139">        return fI;</span>
+<span class="fc" id="L139">        return fI;</span>
     }
     
     public String fechaInicioToString() {
-<span class="nc" id="L143">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L144">        String fI = formatter.format(fechaHoraI.getTime());</span>
+<span class="fc" id="L143">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L144">        String fI = formatter.format(fechaHoraI.getTime());</span>
 
-<span class="nc" id="L146">        return fI;</span>
+<span class="fc" id="L146">        return fI;</span>
     }
     
     public String horaFinToString() {
@@ -173,7 +173,7 @@ public class Evento implements Serializable, Comparable&lt;Evento&gt; {
     
     @Override
     public int compareTo(Evento e){
-<span class="nc" id="L176">        return fechaHoraI.compareTo(e.getFechaHoraI());</span>
+<span class="fc" id="L176">        return fechaHoraI.compareTo(e.getFechaHoraI());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

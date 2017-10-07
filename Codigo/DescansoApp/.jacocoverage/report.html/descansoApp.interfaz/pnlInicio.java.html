@@ -5,187 +5,161 @@ import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import descansoApp.dominio.Sistema;
+import java.awt.Color;
 
 public class pnlInicio extends javax.swing.JPanel {
 
     private Sistema modelo;
     private JFrame padre;
 
-<span class="nc" id="L14">    public pnlInicio(Sistema unModelo, JFrame miPadre) {</span>
-<span class="nc" id="L15">        initComponents();</span>
-<span class="nc" id="L16">        modelo = unModelo;</span>
-<span class="nc" id="L17">        padre = miPadre;</span>
-<span class="nc" id="L18">    }</span>
+<span class="nc" id="L15">    public pnlInicio(Sistema unModelo, JFrame miPadre) {</span>
+<span class="nc" id="L16">        initComponents();</span>
+<span class="nc" id="L17">        modelo = unModelo;</span>
+<span class="nc" id="L18">        padre = miPadre;</span>
+<span class="nc" id="L19">    }</span>
 
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L24">        lblNuevoViaje = new javax.swing.JLabel();</span>
-<span class="nc" id="L25">        lblMisViajes = new javax.swing.JLabel();</span>
-<span class="nc" id="L26">        lblBuscar = new javax.swing.JLabel();</span>
-<span class="nc" id="L27">        txtBuscador = new javax.swing.JTextField();</span>
-<span class="nc" id="L28">        lblBuscador = new javax.swing.JLabel();</span>
-<span class="nc" id="L29">        btnNuevoViaje = new javax.swing.JButton();</span>
-<span class="nc" id="L30">        btnAgregarCiudad = new javax.swing.JButton();</span>
-<span class="nc" id="L31">        lblImagen = new javax.swing.JLabel();</span>
+<span class="nc" id="L25">        lblBuscar = new javax.swing.JLabel();</span>
+<span class="nc" id="L26">        txtBuscador = new javax.swing.JTextField();</span>
+<span class="nc" id="L27">        btnNuevoViaje = new javax.swing.JButton();</span>
+<span class="nc" id="L28">        btnAgregarCiudad = new javax.swing.JButton();</span>
+<span class="nc" id="L29">        jButton1 = new javax.swing.JButton();</span>
+<span class="nc" id="L30">        lblImagen = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L33">        setPreferredSize(new java.awt.Dimension(840, 500));</span>
-<span class="nc" id="L34">        setLayout(null);</span>
+<span class="nc" id="L32">        setPreferredSize(new java.awt.Dimension(840, 500));</span>
+<span class="nc" id="L33">        setLayout(null);</span>
 
-<span class="nc" id="L36">        lblNuevoViaje.setText(&quot;Nuevo Viaje&quot;);</span>
-<span class="nc" id="L37">        lblNuevoViaje.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
-<span class="nc" id="L38">        lblNuevoViaje.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L35">        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Lupa.png&quot;)));</span>
+<span class="nc" id="L36">        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
+<span class="nc" id="L37">        lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L40">                lblNuevoViajeMouseClicked(evt);</span>
-<span class="nc" id="L41">            }</span>
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L43">                lblNuevoViajeMouseEntered(evt);</span>
-<span class="nc" id="L44">            }</span>
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L46">                lblNuevoViajeMouseExited(evt);</span>
-<span class="nc" id="L47">            }</span>
+<span class="nc" id="L39">                lblBuscarMouseClicked(evt);</span>
+<span class="nc" id="L40">            }</span>
         });
-<span class="nc" id="L49">        add(lblNuevoViaje);</span>
-<span class="nc" id="L50">        lblNuevoViaje.setBounds(60, 100, 120, 40);</span>
+<span class="nc" id="L42">        add(lblBuscar);</span>
+<span class="nc" id="L43">        lblBuscar.setBounds(640, 220, 20, 20);</span>
 
-<span class="nc" id="L52">        lblMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnMisViajes.png&quot;)));</span>
-<span class="nc" id="L53">        lblMisViajes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
-<span class="nc" id="L54">        lblMisViajes.addMouseListener(new java.awt.event.MouseAdapter() {</span>
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L56">                lblMisViajesMouseClicked(evt);</span>
-<span class="nc" id="L57">            }</span>
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L59">                lblMisViajesMouseEntered(evt);</span>
-<span class="nc" id="L60">            }</span>
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L62">                lblMisViajesMouseExited(evt);</span>
-<span class="nc" id="L63">            }</span>
-        });
-<span class="nc" id="L65">        add(lblMisViajes);</span>
-<span class="nc" id="L66">        lblMisViajes.setBounds(110, 280, 132, 40);</span>
-
-<span class="nc" id="L68">        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Lupa.png&quot;)));</span>
-<span class="nc" id="L69">        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
-<span class="nc" id="L70">        lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {</span>
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L72">                lblBuscarMouseClicked(evt);</span>
-<span class="nc" id="L73">            }</span>
-        });
-<span class="nc" id="L75">        add(lblBuscar);</span>
-<span class="nc" id="L76">        lblBuscar.setBounds(640, 220, 20, 20);</span>
-
-<span class="nc" id="L78">        txtBuscador.setFont(new java.awt.Font(&quot;Arial&quot;, 0, 11)); // NOI18N</span>
-<span class="nc" id="L79">        txtBuscador.setBorder(null);</span>
-<span class="nc" id="L80">        txtBuscador.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L45">        txtBuscador.setFont(new java.awt.Font(&quot;Leelawadee UI Semilight&quot;, 0, 18)); // NOI18N</span>
+<span class="nc" id="L46">        txtBuscador.setForeground(new java.awt.Color(204, 204, 204));</span>
+<span class="nc" id="L47">        txtBuscador.setText(&quot;Busque por una ciudad por su nombre&quot;);</span>
+<span class="nc" id="L48">        txtBuscador.setToolTipText(&quot;Busque por una ciudad&quot;);</span>
+<span class="nc" id="L49">        txtBuscador.setBorder(null);</span>
+<span class="nc" id="L50">        txtBuscador.setMargin(new java.awt.Insets(2, 12, 2, 2));</span>
+<span class="nc" id="L51">        txtBuscador.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+<span class="nc" id="L53">                txtBuscadorKeyPressed(evt);</span>
+<span class="nc" id="L54">            }</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L82">                txtBuscadorKeyReleased(evt);</span>
-<span class="nc" id="L83">            }</span>
+<span class="nc" id="L56">                txtBuscadorKeyReleased(evt);</span>
+<span class="nc" id="L57">            }</span>
         });
-<span class="nc" id="L85">        add(txtBuscador);</span>
-<span class="nc" id="L86">        txtBuscador.setBounds(290, 220, 340, 22);</span>
+<span class="nc" id="L59">        add(txtBuscador);</span>
+<span class="nc" id="L60">        txtBuscador.setBounds(230, 200, 370, 50);</span>
 
-<span class="nc" id="L88">        lblBuscador.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Buscador.png&quot;)));</span>
-<span class="nc" id="L89">        add(lblBuscador);</span>
-<span class="nc" id="L90">        lblBuscador.setBounds(200, 130, 440, 160);</span>
-
-<span class="nc" id="L92">        btnNuevoViaje.setText(&quot;Nuevo Viaje&quot;);</span>
-<span class="nc" id="L93">        add(btnNuevoViaje);</span>
-<span class="nc" id="L94">        btnNuevoViaje.setBounds(50, 190, 130, 40);</span>
-
-<span class="nc" id="L96">        btnAgregarCiudad.setText(&quot;Agregar Ciudad&quot;);</span>
-<span class="nc" id="L97">        btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L62">        btnNuevoViaje.setText(&quot;Nuevo Viaje&quot;);</span>
+<span class="nc" id="L63">        btnNuevoViaje.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L99">                btnAgregarCiudadActionPerformed(evt);</span>
-<span class="nc" id="L100">            }</span>
+<span class="nc" id="L65">                btnNuevoViajeActionPerformed(evt);</span>
+<span class="nc" id="L66">            }</span>
         });
-<span class="nc" id="L102">        add(btnAgregarCiudad);</span>
-<span class="nc" id="L103">        btnAgregarCiudad.setBounds(480, 420, 150, 50);</span>
+<span class="nc" id="L68">        add(btnNuevoViaje);</span>
+<span class="nc" id="L69">        btnNuevoViaje.setBounds(90, 420, 160, 50);</span>
 
-<span class="nc" id="L105">        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/fondo_inicio_azulado.jpg&quot;)));</span>
-<span class="nc" id="L106">        lblImagen.setPreferredSize(new java.awt.Dimension(800, 450));</span>
-<span class="nc" id="L107">        lblImagen.setVerifyInputWhenFocusTarget(false);</span>
-<span class="nc" id="L108">        lblImagen.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L71">        btnAgregarCiudad.setText(&quot;Agregar Ciudad&quot;);</span>
+<span class="nc" id="L72">        btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L74">                btnAgregarCiudadActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
+        });
+<span class="nc" id="L77">        add(btnAgregarCiudad);</span>
+<span class="nc" id="L78">        btnAgregarCiudad.setBounds(570, 420, 150, 50);</span>
+
+<span class="nc" id="L80">        jButton1.setText(&quot;Mis Viajes&quot;);</span>
+<span class="nc" id="L81">        jButton1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L83">                jButton1ActionPerformed(evt);</span>
+<span class="nc" id="L84">            }</span>
+        });
+<span class="nc" id="L86">        add(jButton1);</span>
+<span class="nc" id="L87">        jButton1.setBounds(340, 420, 150, 50);</span>
+
+<span class="nc" id="L89">        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/fondo_inicio_azulado.jpg&quot;)));</span>
+<span class="nc" id="L90">        lblImagen.setPreferredSize(new java.awt.Dimension(800, 450));</span>
+<span class="nc" id="L91">        lblImagen.setVerifyInputWhenFocusTarget(false);</span>
+<span class="nc" id="L92">        lblImagen.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L110">                lblImagenMouseReleased(evt);</span>
-<span class="nc" id="L111">            }</span>
+<span class="nc" id="L94">                lblImagenMouseReleased(evt);</span>
+<span class="nc" id="L95">            }</span>
         });
-<span class="nc" id="L113">        add(lblImagen);</span>
-<span class="nc" id="L114">        lblImagen.setBounds(0, 0, 840, 500);</span>
-<span class="nc" id="L115">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
-
-    private void lblNuevoViajeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevoViajeMouseEntered
-<span class="nc" id="L118">        lblNuevoViaje.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnNuevoViajeON.png&quot;)));</span>
-<span class="nc" id="L119">    }//GEN-LAST:event_lblNuevoViajeMouseEntered</span>
-
-    private void lblNuevoViajeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevoViajeMouseExited
-<span class="nc" id="L122">        lblNuevoViaje.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnNuevoViaje.png&quot;)));</span>
-<span class="nc" id="L123">    }//GEN-LAST:event_lblNuevoViajeMouseExited</span>
-
-    private void lblMisViajesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMisViajesMouseEntered
-<span class="nc" id="L126">        lblMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnMisViajesON.png&quot;)));</span>
-<span class="nc" id="L127">    }//GEN-LAST:event_lblMisViajesMouseEntered</span>
-
-    private void lblMisViajesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMisViajesMouseExited
-<span class="nc" id="L130">        lblMisViajes.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnMisViajes.png&quot;)));</span>
-<span class="nc" id="L131">    }//GEN-LAST:event_lblMisViajesMouseExited</span>
-
-    private void lblNuevoViajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevoViajeMouseClicked
-        
-<span class="nc" id="L135">    }//GEN-LAST:event_lblNuevoViajeMouseClicked</span>
-
-    private void lblMisViajesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMisViajesMouseClicked
-<span class="nc" id="L138">        PopUp p= new PopUp();</span>
-<span class="nc" id="L139">        p.add(new pnlMisViajes(modelo, p));</span>
-<span class="nc" id="L140">        p.pack();</span>
-<span class="nc" id="L141">        p.setLocationRelativeTo(null);</span>
-<span class="nc" id="L142">        p.setVisible(true);</span>
-<span class="nc" id="L143">    }//GEN-LAST:event_lblMisViajesMouseClicked</span>
+<span class="nc" id="L97">        add(lblImagen);</span>
+<span class="nc" id="L98">        lblImagen.setBounds(0, 0, 840, 500);</span>
+<span class="nc" id="L99">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked
-<span class="nc" id="L146">        buscar();</span>
-<span class="nc" id="L147">    }//GEN-LAST:event_lblBuscarMouseClicked</span>
+<span class="nc" id="L102">        buscar();</span>
+<span class="nc" id="L103">    }//GEN-LAST:event_lblBuscarMouseClicked</span>
 
     private void txtBuscadorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorKeyReleased
-<span class="nc bnc" id="L150" title="All 2 branches missed.">        if(evt.getKeyCode() == KeyEvent.VK_ENTER){</span>
-<span class="nc" id="L151">            buscar();</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        if(evt.getKeyCode() == KeyEvent.VK_ENTER){</span>
+<span class="nc" id="L107">            buscar();</span>
         }
-<span class="nc" id="L153">    }//GEN-LAST:event_txtBuscadorKeyReleased</span>
+        
+<span class="nc" id="L110">    }//GEN-LAST:event_txtBuscadorKeyReleased</span>
 
     private void lblImagenMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblImagenMouseReleased
-<span class="nc" id="L156">        PopUp p= new PopUp();</span>
-<span class="nc" id="L157">        p.add(new pnlNuevoViaje(modelo, p, null));</span>
-<span class="nc" id="L158">        p.pack();</span>
-<span class="nc" id="L159">        p.setLocationRelativeTo(null);</span>
-<span class="nc" id="L160">        p.setVisible(true);</span>
-<span class="nc" id="L161">    }//GEN-LAST:event_lblImagenMouseReleased</span>
+        
+<span class="nc" id="L114">    }//GEN-LAST:event_lblImagenMouseReleased</span>
 
     private void btnAgregarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCiudadActionPerformed
-<span class="nc" id="L164">        PopUp p= new PopUp();</span>
-<span class="nc" id="L165">        p.add(new pnlAgregarCiudad(modelo, p));</span>
-<span class="nc" id="L166">        p.pack();</span>
-<span class="nc" id="L167">        p.setLocationRelativeTo(null);</span>
-<span class="nc" id="L168">        p.setVisible(true);</span>
-<span class="nc" id="L169">    }//GEN-LAST:event_btnAgregarCiudadActionPerformed</span>
+<span class="nc" id="L117">        PopUp p= new PopUp();</span>
+<span class="nc" id="L118">        p.add(new pnlAgregarCiudad(modelo, p));</span>
+<span class="nc" id="L119">        p.pack();</span>
+<span class="nc" id="L120">        p.setLocationRelativeTo(null);</span>
+<span class="nc" id="L121">        p.setVisible(true);</span>
+<span class="nc" id="L122">    }//GEN-LAST:event_btnAgregarCiudadActionPerformed</span>
+
+    private void btnNuevoViajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoViajeActionPerformed
+<span class="nc" id="L125">        PopUp p= new PopUp();</span>
+<span class="nc" id="L126">        p.add(new pnlNuevoViaje(modelo, p,null));</span>
+<span class="nc" id="L127">        p.pack();</span>
+<span class="nc" id="L128">        p.setLocationRelativeTo(null);</span>
+<span class="nc" id="L129">        p.setVisible(true);</span>
+<span class="nc" id="L130">    }//GEN-LAST:event_btnNuevoViajeActionPerformed</span>
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<span class="nc" id="L133">        PopUp p= new PopUp();</span>
+<span class="nc" id="L134">        p.add(new pnlMisViajes(modelo, p));</span>
+<span class="nc" id="L135">        p.pack();</span>
+<span class="nc" id="L136">        p.setLocationRelativeTo(null);</span>
+<span class="nc" id="L137">        p.setVisible(true);</span>
+<span class="nc" id="L138">    }//GEN-LAST:event_jButton1ActionPerformed</span>
+
+    private void txtBuscadorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorKeyPressed
+<span class="nc bnc" id="L141" title="All 2 branches missed.">        if (txtBuscador.getText().equals(&quot;Busque por una ciudad por su nombre&quot;)) {</span>
+<span class="nc" id="L142">            txtBuscador.setText(&quot;&quot;);</span>
+<span class="nc" id="L143">            txtBuscador.setForeground(Color.black);</span>
+        }
+<span class="nc" id="L145">    }//GEN-LAST:event_txtBuscadorKeyPressed</span>
 
     private void buscar() {
-<span class="nc bnc" id="L172" title="All 2 branches missed.">        if (txtBuscador.getText().length() &lt;= 3) {</span>
-<span class="nc" id="L173">            JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        if (txtBuscador.getText().length() &lt;= 3) {</span>
+<span class="nc" id="L149">            JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
         } else {
-<span class="nc" id="L175">            padre.remove(this);</span>
-<span class="nc" id="L176">            padre.add(new pnlResultadoBusqueda(modelo, padre, txtBuscador.getText()), BorderLayout.WEST);</span>
-<span class="nc" id="L177">            padre.pack();</span>
+<span class="nc" id="L151">            padre.remove(this);</span>
+<span class="nc" id="L152">            padre.add(new pnlResultadoBusqueda(modelo, padre, txtBuscador.getText()), BorderLayout.WEST);</span>
+<span class="nc" id="L153">            padre.pack();</span>
         }
-<span class="nc" id="L179">    }</span>
+<span class="nc" id="L155">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarCiudad;
     private javax.swing.JButton btnNuevoViaje;
-    private javax.swing.JLabel lblBuscador;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblImagen;
-    private javax.swing.JLabel lblMisViajes;
-    private javax.swing.JLabel lblNuevoViaje;
     private javax.swing.JTextField txtBuscador;
     // End of variables declaration//GEN-END:variables
 }

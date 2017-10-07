@@ -39,51 +39,63 @@ public class pResultado extends javax.swing.JPanel {
 
 <span class="nc" id="L40">        lblDes.setEditable(false);</span>
 <span class="nc" id="L41">        lblDes.setColumns(20);</span>
-<span class="nc" id="L42">        lblDes.setFont(new java.awt.Font(&quot;Arial&quot;, 0, 13)); // NOI18N</span>
+<span class="nc" id="L42">        lblDes.setFont(new java.awt.Font(&quot;Leelawadee UI Semilight&quot;, 0, 14)); // NOI18N</span>
 <span class="nc" id="L43">        lblDes.setForeground(new java.awt.Color(255, 255, 255));</span>
 <span class="nc" id="L44">        lblDes.setLineWrap(true);</span>
 <span class="nc" id="L45">        lblDes.setRows(5);</span>
 <span class="nc" id="L46">        lblDes.setWrapStyleWord(true);</span>
 <span class="nc" id="L47">        lblDes.setAutoscrolls(false);</span>
 <span class="nc" id="L48">        lblDes.setBorder(null);</span>
-<span class="nc" id="L49">        lblDes.setHighlighter(null);</span>
-<span class="nc" id="L50">        lblDes.setOpaque(false);</span>
-<span class="nc" id="L51">        scroll.setViewportView(lblDes);</span>
-
-<span class="nc" id="L53">        lblNombre.setFont(new java.awt.Font(&quot;Arial&quot;, 0, 15)); // NOI18N</span>
-<span class="nc" id="L54">        lblNombre.setForeground(new java.awt.Color(0, 51, 204));</span>
-<span class="nc" id="L55">        lblNombre.setText(&quot;Nombre Ciudad&quot;);</span>
-<span class="nc" id="L56">        lblNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
-<span class="nc" id="L57">        lblNombre.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L49">        lblDes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
+<span class="nc" id="L50">        lblDes.setHighlighter(null);</span>
+<span class="nc" id="L51">        lblDes.setOpaque(false);</span>
+<span class="nc" id="L52">        lblDes.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L59">                lblNombreMouseClicked(evt);</span>
-<span class="nc" id="L60">            }</span>
+<span class="nc" id="L54">                lblDesMouseClicked(evt);</span>
+<span class="nc" id="L55">            }</span>
+        });
+<span class="nc" id="L57">        scroll.setViewportView(lblDes);</span>
+
+<span class="nc" id="L59">        lblNombre.setFont(new java.awt.Font(&quot;Leelawadee UI&quot;, 1, 18)); // NOI18N</span>
+<span class="nc" id="L60">        lblNombre.setForeground(new java.awt.Color(0, 51, 204));</span>
+<span class="nc" id="L61">        lblNombre.setText(&quot;Nombre Ciudad&quot;);</span>
+<span class="nc" id="L62">        lblNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
+<span class="nc" id="L63">        lblNombre.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+<span class="nc" id="L65">                lblNombreMouseClicked(evt);</span>
+<span class="nc" id="L66">            }</span>
         });
 
-<span class="nc" id="L63">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L64">        this.setLayout(layout);</span>
-<span class="nc" id="L65">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L66">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L67">            .addComponent(scroll, javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L68">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L69">                .addComponent(lblNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)</span>
-<span class="nc" id="L70">                .addGap(620, 620, 620))</span>
-        );
-<span class="nc" id="L72">        layout.setVerticalGroup(</span>
-<span class="nc" id="L73">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L69">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L70">        this.setLayout(layout);</span>
+<span class="nc" id="L71">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L72">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L73">            .addComponent(scroll, javax.swing.GroupLayout.Alignment.TRAILING)</span>
 <span class="nc" id="L74">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L75">                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L76">                .addGap(4, 4, 4)</span>
-<span class="nc" id="L77">                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L78">                .addGap(0, 0, 0))</span>
+<span class="nc" id="L75">                .addComponent(lblNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L76">                .addGap(620, 620, 620))</span>
         );
-<span class="nc" id="L80">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L78">        layout.setVerticalGroup(</span>
+<span class="nc" id="L79">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L80">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L81">                .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L82">                .addGap(4, 4, 4)</span>
+<span class="nc" id="L83">                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L84">                .addGap(0, 0, 0))</span>
+        );
+<span class="nc" id="L86">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void lblNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNombreMouseClicked
-<span class="nc" id="L83">        ventana.remove(padre);</span>
-<span class="nc" id="L84">        ventana.add(new pnlInformacionCiudad(modelo, ciudad, ventana));</span>
-<span class="nc" id="L85">        ventana.pack();</span>
-<span class="nc" id="L86">    }//GEN-LAST:event_lblNombreMouseClicked</span>
+<span class="nc" id="L89">        ventana.remove(padre);</span>
+<span class="nc" id="L90">        ventana.add(new pnlInformacionCiudad(modelo, ciudad, ventana));</span>
+<span class="nc" id="L91">        ventana.pack();</span>
+<span class="nc" id="L92">    }//GEN-LAST:event_lblNombreMouseClicked</span>
+
+    private void lblDesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDesMouseClicked
+<span class="nc" id="L95">        ventana.remove(padre);</span>
+<span class="nc" id="L96">        ventana.add(new pnlInformacionCiudad(modelo, ciudad, ventana));</span>
+<span class="nc" id="L97">        ventana.pack();</span>
+<span class="nc" id="L98">    }//GEN-LAST:event_lblDesMouseClicked</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea lblDes;

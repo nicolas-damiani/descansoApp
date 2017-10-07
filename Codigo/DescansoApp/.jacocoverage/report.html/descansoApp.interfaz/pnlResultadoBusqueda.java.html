@@ -41,8 +41,8 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
 
 <span class="nc" id="L42">        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());</span>
 
-<span class="nc" id="L44">        lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnHome.png&quot;))); // NOI18N</span>
-<span class="nc" id="L45">        lblHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
+<span class="nc" id="L44">        lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/btnHome.png&quot;)));</span>
+<span class="nc" id="L45">        lblHome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
 <span class="nc" id="L46">        lblHome.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
 <span class="nc" id="L48">                lblHomeMouseClicked(evt);</span>
@@ -50,8 +50,8 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         });
 <span class="nc" id="L51">        add(lblHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 38, 30, 30));</span>
 
-<span class="nc" id="L53">        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Lupa.png&quot;))); // NOI18N</span>
-<span class="nc" id="L54">        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));</span>
+<span class="nc" id="L53">        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Lupa.png&quot;)));</span>
+<span class="nc" id="L54">        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));</span>
 <span class="nc" id="L55">        lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
 <span class="nc" id="L57">                lblBuscarMouseClicked(evt);</span>
@@ -82,84 +82,86 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
 <span class="nc" id="L82">        lblTitulo.setText(&quot;Resultados de la búsqueda&quot;);</span>
 <span class="nc" id="L83">        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 38, -1, -1));</span>
 
-<span class="nc" id="L85">        javax.swing.GroupLayout pnlResultadosLayout = new javax.swing.GroupLayout(pnlResultados);</span>
-<span class="nc" id="L86">        pnlResultados.setLayout(pnlResultadosLayout);</span>
-<span class="nc" id="L87">        pnlResultadosLayout.setHorizontalGroup(</span>
-<span class="nc" id="L88">            pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L89">            .addGap(0, 778, Short.MAX_VALUE)</span>
+<span class="nc" id="L85">        pnlResultados.setBackground(new java.awt.Color(255, 255, 255));</span>
+
+<span class="nc" id="L87">        javax.swing.GroupLayout pnlResultadosLayout = new javax.swing.GroupLayout(pnlResultados);</span>
+<span class="nc" id="L88">        pnlResultados.setLayout(pnlResultadosLayout);</span>
+<span class="nc" id="L89">        pnlResultadosLayout.setHorizontalGroup(</span>
+<span class="nc" id="L90">            pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L91">            .addGap(0, 778, Short.MAX_VALUE)</span>
         );
-<span class="nc" id="L91">        pnlResultadosLayout.setVerticalGroup(</span>
-<span class="nc" id="L92">            pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L93">            .addGap(0, 368, Short.MAX_VALUE)</span>
+<span class="nc" id="L93">        pnlResultadosLayout.setVerticalGroup(</span>
+<span class="nc" id="L94">            pnlResultadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L95">            .addGap(0, 368, Short.MAX_VALUE)</span>
         );
 
-<span class="nc" id="L96">        scroll.setViewportView(pnlResultados);</span>
+<span class="nc" id="L98">        scroll.setViewportView(pnlResultados);</span>
 
-<span class="nc" id="L98">        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 770, 370));</span>
+<span class="nc" id="L100">        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 770, 370));</span>
 
-<span class="nc" id="L100">        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Fondo.png&quot;))); // NOI18N</span>
-<span class="nc" id="L101">        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));</span>
-<span class="nc" id="L102">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L102">        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/descansoApp/imagenes/Fondo.png&quot;)));</span>
+<span class="nc" id="L103">        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));</span>
+<span class="nc" id="L104">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void txtBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorActionPerformed
 
-<span class="nc" id="L106">    }//GEN-LAST:event_txtBuscadorActionPerformed</span>
+<span class="nc" id="L108">    }//GEN-LAST:event_txtBuscadorActionPerformed</span>
 
     private void lblBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBuscarMouseClicked
-<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (txtBuscador.getText().length() &lt;= 3) {</span>
-<span class="nc" id="L110">            JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">        if (txtBuscador.getText().length() &lt;= 3) {</span>
+<span class="nc" id="L112">            JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
         } else {
-<span class="nc" id="L112">            busqueda(txtBuscador.getText());</span>
-<span class="nc" id="L113">            txtBuscador.setText(&quot;&quot;);</span>
+<span class="nc" id="L114">            busqueda(txtBuscador.getText());</span>
+<span class="nc" id="L115">            txtBuscador.setText(&quot;&quot;);</span>
         }
-<span class="nc" id="L115">    }//GEN-LAST:event_lblBuscarMouseClicked</span>
+<span class="nc" id="L117">    }//GEN-LAST:event_lblBuscarMouseClicked</span>
 
     private void txtBuscadorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscadorKeyReleased
-<span class="nc bnc" id="L118" title="All 2 branches missed.">        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {</span>
-<span class="nc bnc" id="L119" title="All 2 branches missed.">            if (txtBuscador.getText().length() &lt;= 3) {</span>
-<span class="nc" id="L120">                JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {</span>
+<span class="nc bnc" id="L121" title="All 2 branches missed.">            if (txtBuscador.getText().length() &lt;= 3) {</span>
+<span class="nc" id="L122">                JOptionPane.showMessageDialog(this, &quot;Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda&quot;, &quot;Busqueda Vacía&quot;, JOptionPane.INFORMATION_MESSAGE);</span>
             } else {
-<span class="nc" id="L122">                busqueda(txtBuscador.getText());</span>
-<span class="nc" id="L123">                txtBuscador.setText(&quot;&quot;);</span>
+<span class="nc" id="L124">                busqueda(txtBuscador.getText());</span>
+<span class="nc" id="L125">                txtBuscador.setText(&quot;&quot;);</span>
             }
         }
-<span class="nc" id="L126">    }//GEN-LAST:event_txtBuscadorKeyReleased</span>
+<span class="nc" id="L128">    }//GEN-LAST:event_txtBuscadorKeyReleased</span>
 
     private void lblHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHomeMouseClicked
-<span class="nc" id="L129">        padre.remove(this);</span>
-<span class="nc" id="L130">        padre.add(new pnlInicio(modelo, padre));</span>
-<span class="nc" id="L131">        padre.pack();</span>
-<span class="nc" id="L132">    }//GEN-LAST:event_lblHomeMouseClicked</span>
+<span class="nc" id="L131">        padre.remove(this);</span>
+<span class="nc" id="L132">        padre.add(new pnlInicio(modelo, padre));</span>
+<span class="nc" id="L133">        padre.pack();</span>
+<span class="nc" id="L134">    }//GEN-LAST:event_lblHomeMouseClicked</span>
 
     private void busqueda(String unaPalabra) {
-<span class="nc" id="L135">        pnlResultados.removeAll();</span>
-<span class="nc" id="L136">        pnlResultados.revalidate();</span>
-<span class="nc" id="L137">        pnlResultados.repaint();</span>
+<span class="nc" id="L137">        pnlResultados.removeAll();</span>
+<span class="nc" id="L138">        pnlResultados.revalidate();</span>
+<span class="nc" id="L139">        pnlResultados.repaint();</span>
 
-<span class="nc" id="L139">        Buscador bus = new Buscador(modelo.getListaCiudades());</span>
-<span class="nc" id="L140">        ArrayList&lt;descansoApp.dominio.Ciudad&gt; resultados = bus.buscar(unaPalabra);</span>
+<span class="nc" id="L141">        Buscador bus = new Buscador(modelo.getListaCiudades());</span>
+<span class="nc" id="L142">        ArrayList&lt;descansoApp.dominio.Ciudad&gt; resultados = bus.buscar(unaPalabra);</span>
 
-<span class="nc" id="L142">        int cantResultados = resultados.size();</span>
-<span class="nc bnc" id="L143" title="All 2 branches missed.">        if (cantResultados &gt; 0) {</span>
-<span class="nc" id="L144">            scroll.setVisible(true);</span>
-<span class="nc" id="L145">            lblNoHay.setVisible(false);</span>
+<span class="nc" id="L144">        int cantResultados = resultados.size();</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">        if (cantResultados &gt; 0) {</span>
+<span class="nc" id="L146">            scroll.setVisible(true);</span>
+<span class="nc" id="L147">            lblNoHay.setVisible(false);</span>
             
-<span class="nc bnc" id="L147" title="All 2 branches missed.">            for (int i = 0; i &lt; cantResultados; i++) {</span>
-<span class="nc" id="L148">                pResultado pr = new pResultado(modelo, resultados.get(i), padre, this);</span>
+<span class="nc bnc" id="L149" title="All 2 branches missed.">            for (int i = 0; i &lt; cantResultados; i++) {</span>
+<span class="nc" id="L150">                pResultado pr = new pResultado(modelo, resultados.get(i), padre, this);</span>
                 
-<span class="nc" id="L150">                pnlResultados.setLayout(new java.awt.BorderLayout());</span>
-<span class="nc" id="L151">                pnlResultados.add(pr);</span>
-<span class="nc" id="L152">                pr.setVisible(true);</span>
-<span class="nc" id="L153">                pnlResultados.setVisible(true);</span>
-<span class="nc" id="L154">                pnlResultados.revalidate();</span>
-<span class="nc" id="L155">                pnlResultados.repaint();</span>
+<span class="nc" id="L152">                pnlResultados.setLayout(new java.awt.BorderLayout());</span>
+<span class="nc" id="L153">                pnlResultados.add(pr);</span>
+<span class="nc" id="L154">                pr.setVisible(true);</span>
+<span class="nc" id="L155">                pnlResultados.setVisible(true);</span>
+<span class="nc" id="L156">                pnlResultados.revalidate();</span>
+<span class="nc" id="L157">                pnlResultados.repaint();</span>
             }
         }
         else {
-<span class="nc" id="L159">            scroll.setVisible(false);</span>
-<span class="nc" id="L160">            lblNoHay.setVisible(true);</span>
+<span class="nc" id="L161">            scroll.setVisible(false);</span>
+<span class="nc" id="L162">            lblNoHay.setVisible(true);</span>
         } 
-<span class="nc" id="L162">    }</span>
+<span class="nc" id="L164">    }</span>
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblFondo;

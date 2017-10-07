@@ -9,7 +9,9 @@ import descansoApp.dominio.Ciudad;
 import descansoApp.dominio.ComercioActividad;
 import descansoApp.dominio.Sistema;
 import descansoApp.herramientas.TipoCA;
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,16 +20,19 @@ import javax.swing.JFrame;
 public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private Ciudad ciudad;
     private TipoCA tipoCA;
+    private ArrayList&lt;String&gt; errores;
+    private JFrame miVentana;
+    
 
     /**
      * Creates new form pnlAgregarComercioActividad
      */
-<span class="nc" id="L25">    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor, Ciudad unaCiudad, TipoCA unTipoCA) {</span>
-<span class="nc" id="L26">        initComponents();</span>
-<span class="nc" id="L27">        tipoCA = unTipoCA;</span>
-<span class="nc" id="L28">        this.ciudad = unaCiudad;</span>
-        
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L30">    public pnlAgregarComercioActividad(Sistema unModelo, JFrame unContenedor, Ciudad unaCiudad, TipoCA unTipoCA) {</span>
+<span class="nc" id="L31">        initComponents();</span>
+<span class="nc" id="L32">        tipoCA = unTipoCA;</span>
+<span class="nc" id="L33">        this.ciudad = unaCiudad;</span>
+<span class="nc" id="L34">        miVentana = unContenedor;</span>
+<span class="nc" id="L35">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,114 +43,161 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L41">        tFNombre = new javax.swing.JTextField();</span>
-<span class="nc" id="L42">        tFDetalles = new javax.swing.JTextField();</span>
-<span class="nc" id="L43">        tFCategoria = new javax.swing.JTextField();</span>
-<span class="nc" id="L44">        tFUbicacion = new javax.swing.JTextField();</span>
-<span class="nc" id="L45">        tFTelefono = new javax.swing.JTextField();</span>
-<span class="nc" id="L46">        tFWebLink = new javax.swing.JTextField();</span>
-<span class="nc" id="L47">        tFPrecio = new javax.swing.JTextField();</span>
-<span class="nc" id="L48">        btnAdjuntarImagenes = new javax.swing.JButton();</span>
-<span class="nc" id="L49">        btnGuardarCA = new javax.swing.JButton();</span>
-<span class="nc" id="L50">        tFHorario = new javax.swing.JTextField();</span>
+<span class="nc" id="L46">        tFNombre = new javax.swing.JTextField();</span>
+<span class="nc" id="L47">        tFDetalles = new javax.swing.JTextField();</span>
+<span class="nc" id="L48">        tFCategoria = new javax.swing.JTextField();</span>
+<span class="nc" id="L49">        tFUbicacion = new javax.swing.JTextField();</span>
+<span class="nc" id="L50">        tFTelefono = new javax.swing.JTextField();</span>
+<span class="nc" id="L51">        tFWebLink = new javax.swing.JTextField();</span>
+<span class="nc" id="L52">        tFPrecio = new javax.swing.JTextField();</span>
+<span class="nc" id="L53">        btnAdjuntarImagenes = new javax.swing.JButton();</span>
+<span class="nc" id="L54">        btnGuardarCA = new javax.swing.JButton();</span>
+<span class="nc" id="L55">        tFHorario = new javax.swing.JTextField();</span>
 
-<span class="nc" id="L52">        tFNombre.setText(&quot;Nombre&quot;);</span>
+<span class="nc" id="L57">        tFNombre.setText(&quot;Nombre&quot;);</span>
 
-<span class="nc" id="L54">        tFDetalles.setText(&quot;Detalles&quot;);</span>
-<span class="nc" id="L55">        tFDetalles.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L59">        tFDetalles.setText(&quot;Detalles&quot;);</span>
+<span class="nc" id="L60">        tFDetalles.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L57">                tFDetallesActionPerformed(evt);</span>
-<span class="nc" id="L58">            }</span>
+<span class="nc" id="L62">                tFDetallesActionPerformed(evt);</span>
+<span class="nc" id="L63">            }</span>
         });
 
-<span class="nc" id="L61">        tFCategoria.setText(&quot;Categoria&quot;);</span>
+<span class="nc" id="L66">        tFCategoria.setText(&quot;Categoria&quot;);</span>
 
-<span class="nc" id="L63">        tFUbicacion.setText(&quot;Ubicacion&quot;);</span>
+<span class="nc" id="L68">        tFUbicacion.setText(&quot;Ubicacion&quot;);</span>
 
-<span class="nc" id="L65">        tFTelefono.setText(&quot;Telefono&quot;);</span>
-<span class="nc" id="L66">        tFTelefono.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L70">        tFTelefono.setText(&quot;Telefono&quot;);</span>
+<span class="nc" id="L71">        tFTelefono.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L68">                tFTelefonoActionPerformed(evt);</span>
-<span class="nc" id="L69">            }</span>
+<span class="nc" id="L73">                tFTelefonoActionPerformed(evt);</span>
+<span class="nc" id="L74">            }</span>
         });
 
-<span class="nc" id="L72">        tFWebLink.setText(&quot;Web&quot;);</span>
+<span class="nc" id="L77">        tFWebLink.setText(&quot;Web&quot;);</span>
 
-<span class="nc" id="L74">        tFPrecio.setText(&quot;Precio&quot;);</span>
+<span class="nc" id="L79">        tFPrecio.setText(&quot;Precio&quot;);</span>
 
-<span class="nc" id="L76">        btnAdjuntarImagenes.setText(&quot;Adjuntar Imagenes&quot;);</span>
+<span class="nc" id="L81">        btnAdjuntarImagenes.setText(&quot;Adjuntar Imagenes&quot;);</span>
 
-<span class="nc" id="L78">        btnGuardarCA.setText(&quot;Guardar&quot;);</span>
-<span class="nc" id="L79">        btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L83">        btnGuardarCA.setText(&quot;Guardar&quot;);</span>
+<span class="nc" id="L84">        btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L81">                btnGuardarCAActionPerformed(evt);</span>
-<span class="nc" id="L82">            }</span>
+<span class="nc" id="L86">                btnGuardarCAActionPerformed(evt);</span>
+<span class="nc" id="L87">            }</span>
         });
 
-<span class="nc" id="L85">        tFHorario.setText(&quot;Horario&quot;);</span>
+<span class="nc" id="L90">        tFHorario.setText(&quot;Horario&quot;);</span>
 
-<span class="nc" id="L87">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L88">        this.setLayout(layout);</span>
-<span class="nc" id="L89">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L90">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L91">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L92">                .addGap(90, 90, 90)</span>
-<span class="nc" id="L93">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L94">                    .addComponent(btnGuardarCA, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L95">                    .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L96">                    .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L97">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
-<span class="nc" id="L98">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L99">                            .addComponent(tFTelefono)</span>
-<span class="nc" id="L100">                            .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L101">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L102">                            .addComponent(tFNombre)</span>
-<span class="nc" id="L103">                            .addComponent(tFDetalles)</span>
-<span class="nc" id="L104">                            .addComponent(tFCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)</span>
-<span class="nc" id="L105">                            .addComponent(tFUbicacion)</span>
-<span class="nc" id="L106">                            .addComponent(tFHorario))))</span>
-<span class="nc" id="L107">                .addContainerGap(102, Short.MAX_VALUE))</span>
+<span class="nc" id="L92">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L93">        this.setLayout(layout);</span>
+<span class="nc" id="L94">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L95">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L96">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L97">                .addGap(90, 90, 90)</span>
+<span class="nc" id="L98">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L99">                    .addComponent(btnGuardarCA, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L100">                    .addComponent(btnAdjuntarImagenes, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L101">                    .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L102">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="nc" id="L103">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L104">                            .addComponent(tFTelefono)</span>
+<span class="nc" id="L105">                            .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L106">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L107">                            .addComponent(tFNombre)</span>
+<span class="nc" id="L108">                            .addComponent(tFDetalles)</span>
+<span class="nc" id="L109">                            .addComponent(tFCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)</span>
+<span class="nc" id="L110">                            .addComponent(tFUbicacion)</span>
+<span class="nc" id="L111">                            .addComponent(tFHorario))))</span>
+<span class="nc" id="L112">                .addContainerGap(102, Short.MAX_VALUE))</span>
         );
-<span class="nc" id="L109">        layout.setVerticalGroup(</span>
-<span class="nc" id="L110">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L111">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L112">                .addGap(42, 42, 42)</span>
-<span class="nc" id="L113">                .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L114">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L115">                .addComponent(tFDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L116">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L117">                .addComponent(tFCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L118">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)</span>
-<span class="nc" id="L119">                .addComponent(tFHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L120">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L121">                .addComponent(tFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L122">                .addGap(12, 12, 12)</span>
-<span class="nc" id="L123">                .addComponent(tFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L124">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L125">                .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L126">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L127">                .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L128">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L129">                .addComponent(btnAdjuntarImagenes)</span>
-<span class="nc" id="L130">                .addGap(18, 18, 18)</span>
-<span class="nc" id="L131">                .addComponent(btnGuardarCA)</span>
-<span class="nc" id="L132">                .addGap(35, 35, 35))</span>
+<span class="nc" id="L114">        layout.setVerticalGroup(</span>
+<span class="nc" id="L115">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L116">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L117">                .addGap(42, 42, 42)</span>
+<span class="nc" id="L118">                .addComponent(tFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L119">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L120">                .addComponent(tFDetalles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L121">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L122">                .addComponent(tFCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L123">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)</span>
+<span class="nc" id="L124">                .addComponent(tFHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L125">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L126">                .addComponent(tFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L127">                .addGap(12, 12, 12)</span>
+<span class="nc" id="L128">                .addComponent(tFTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L129">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L130">                .addComponent(tFWebLink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L131">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L132">                .addComponent(tFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L133">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L134">                .addComponent(btnAdjuntarImagenes)</span>
+<span class="nc" id="L135">                .addGap(18, 18, 18)</span>
+<span class="nc" id="L136">                .addComponent(btnGuardarCA)</span>
+<span class="nc" id="L137">                .addGap(35, 35, 35))</span>
         );
-<span class="nc" id="L134">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L139">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void tFDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDetallesActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L138">    }//GEN-LAST:event_tFDetallesActionPerformed</span>
+<span class="nc" id="L143">    }//GEN-LAST:event_tFDetallesActionPerformed</span>
 
     private void tFTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFTelefonoActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L142">    }//GEN-LAST:event_tFTelefonoActionPerformed</span>
+<span class="nc" id="L147">    }//GEN-LAST:event_tFTelefonoActionPerformed</span>
 
     private void btnGuardarCAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCAActionPerformed
-<span class="nc" id="L145">        ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());</span>
-<span class="nc" id="L146">        this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);</span>
-<span class="nc" id="L147">    }//GEN-LAST:event_btnGuardarCAActionPerformed</span>
+<span class="nc bnc" id="L150" title="All 2 branches missed.">        if (verificarCampos()){</span>
+<span class="nc" id="L151">            ComercioActividad comercioActividad = new ComercioActividad(tFNombre.getText(), tFDetalles.getText(), tipoCA, tFCategoria.getText(),tFHorario.getText(), tFUbicacion.getText(), tFTelefono.getText(), tFWebLink.getText(), tFPrecio.getText());</span>
+<span class="nc" id="L152">            this.ciudad.agregarComercioActividad(tipoCA, comercioActividad);</span>
+<span class="nc" id="L153">            JOptionPane.showMessageDialog(this, tipoCA+&quot; correctamente agregado&quot;);</span>
+<span class="nc" id="L154">            miVentana.dispose();</span>
+            
+<span class="nc" id="L156">        }else{</span>
+<span class="nc" id="L157">            String mensaje = &quot;Debe de completar los siguientes campos: &quot;;</span>
+<span class="nc bnc" id="L158" title="All 2 branches missed.">            for (int i =0;i&lt;errores.size();i++){</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">                if (i+1==errores.size()){</span>
+<span class="nc" id="L160">                    mensaje+= errores.get(i) + &quot;.&quot;;</span>
+                }else{
+<span class="nc" id="L162">                     mensaje+= errores.get(i) + &quot;, &quot;;</span>
+                }
+            }
+<span class="nc" id="L165">            JOptionPane.showMessageDialog(this, mensaje);</span>
+        }
+<span class="nc" id="L167">    }//GEN-LAST:event_btnGuardarCAActionPerformed</span>
 
+    
+    private boolean verificarCampos (){
+<span class="nc" id="L171">        errores = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L172">        boolean sinErrores = true;</span>
+        
+<span class="nc bnc" id="L174" title="All 2 branches missed.">        if(tFNombre.getText().isEmpty()){</span>
+<span class="nc" id="L175">            sinErrores = false;</span>
+<span class="nc" id="L176">           errores.add(&quot;Nombre&quot;);</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">        }if(tFDetalles.getText().isEmpty()){</span>
+<span class="nc" id="L178">            sinErrores = false;</span>
+<span class="nc" id="L179">           errores.add(&quot;Detalles&quot;);</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">        }if(tFCategoria.getText().isEmpty()){</span>
+<span class="nc" id="L181">            sinErrores = false;</span>
+<span class="nc" id="L182">           errores.add(&quot;Categoria&quot;);</span>
+<span class="nc bnc" id="L183" title="All 2 branches missed.">        }if(tFHorario.getText().isEmpty()){</span>
+<span class="nc" id="L184">            sinErrores = false;</span>
+<span class="nc" id="L185">           errores.add(&quot;Horario&quot;);</span>
+<span class="nc bnc" id="L186" title="All 2 branches missed.">        }if(tFUbicacion.getText().isEmpty()){</span>
+<span class="nc" id="L187">            sinErrores = false;</span>
+<span class="nc" id="L188">           errores.add(&quot;Ubicacion&quot;);</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">        }if(tFTelefono.getText().isEmpty()){</span>
+<span class="nc" id="L190">            sinErrores = false;</span>
+<span class="nc" id="L191">           errores.add(&quot;Telefono&quot;);</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">        }if(tFWebLink.getText().isEmpty()){</span>
+<span class="nc" id="L193">            sinErrores = false;</span>
+<span class="nc" id="L194">           errores.add(&quot;Web Link&quot;);</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">        } if(tFPrecio.getText().isEmpty()){</span>
+<span class="nc" id="L196">            sinErrores = false;</span>
+<span class="nc" id="L197">           errores.add(&quot;Precio&quot;);</span>
+        } 
+<span class="nc" id="L199">        return sinErrores;</span>
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdjuntarImagenes;

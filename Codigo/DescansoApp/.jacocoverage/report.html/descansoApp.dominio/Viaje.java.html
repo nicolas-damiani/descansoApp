@@ -35,20 +35,20 @@ public class Viaje implements Serializable {
 <span class="fc" id="L35">    }</span>
 
     public Calendar getFechaI() {
-<span class="nc" id="L38">        return fechaI;</span>
+<span class="fc" id="L38">        return fechaI;</span>
     }
 
     public void setFechaI(Calendar fechaI) throws Exception {
 <span class="fc" id="L42">        Calendar c = soloFecha(Calendar.getInstance());</span>
 
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (fechaI.compareTo(c) &gt; 0) {</span>
-<span class="nc" id="L45">            this.fechaI = fechaI;</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (fechaI.compareTo(c) &gt; 0) {</span>
+<span class="fc" id="L45">            this.fechaI = fechaI;</span>
 
         } else {
 <span class="fc" id="L48">            throw new Exception(&quot;La fecha de inicio del viaje debe ser la actual o una futura.&quot;);</span>
 
         }
-<span class="nc" id="L51">    }</span>
+<span class="fc" id="L51">    }</span>
       public Calendar soloFecha(Calendar f) {
 <span class="fc" id="L53">        f.set(Calendar.HOUR, 0);</span>
 <span class="fc" id="L54">        f.set(Calendar.HOUR_OF_DAY, 0);</span>
@@ -98,28 +98,28 @@ public class Viaje implements Serializable {
 
     @Override
     public String toString() {
-<span class="nc" id="L101">        String ret = &quot;&quot;;</span>
-<span class="nc" id="L102">        ret = nombre;</span>
+<span class="fc" id="L101">        String ret = &quot;&quot;;</span>
+<span class="fc" id="L102">        ret = nombre;</span>
 
-<span class="nc" id="L104">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L105">        String fI = formatter.format(fechaI.getTime());</span>
-<span class="nc" id="L106">        String fF = formatter.format(fechaF.getTime());</span>
+<span class="fc" id="L104">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L105">        String fI = formatter.format(fechaI.getTime());</span>
+<span class="fc" id="L106">        String fF = formatter.format(fechaF.getTime());</span>
 
-<span class="nc" id="L108">        ret += &quot; (&quot; + fI + &quot; - &quot; + fF + &quot;)&quot;;</span>
+<span class="fc" id="L108">        ret += &quot; (&quot; + fI + &quot; - &quot; + fF + &quot;)&quot;;</span>
 
-<span class="nc" id="L110">        return ret;</span>
+<span class="fc" id="L110">        return ret;</span>
     }
     
     public String fechaToString() {
-<span class="nc" id="L114">        String ret = &quot;&quot;;</span>
+<span class="fc" id="L114">        String ret = &quot;&quot;;</span>
 
-<span class="nc" id="L116">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L117">        String fI = formatter.format(fechaI.getTime());</span>
-<span class="nc" id="L118">        String fF = formatter.format(fechaF.getTime());</span>
+<span class="fc" id="L116">        SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L117">        String fI = formatter.format(fechaI.getTime());</span>
+<span class="fc" id="L118">        String fF = formatter.format(fechaF.getTime());</span>
 
-<span class="nc" id="L120">        ret += &quot; (&quot; + fI + &quot; - &quot; + fF + &quot;)&quot;;</span>
+<span class="fc" id="L120">        ret += &quot; (&quot; + fI + &quot; - &quot; + fF + &quot;)&quot;;</span>
 
-<span class="nc" id="L122">        return ret;</span>
+<span class="fc" id="L122">        return ret;</span>
     }
 
     @Override
