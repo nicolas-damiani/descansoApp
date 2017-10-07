@@ -174,7 +174,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         txtIntroduccion.setEditable(false);
         txtIntroduccion.setColumns(20);
         txtIntroduccion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        txtIntroduccion.setForeground(new java.awt.Color(255, 255, 255));
+        txtIntroduccion.setForeground(new java.awt.Color(51, 51, 51));
         txtIntroduccion.setLineWrap(true);
         txtIntroduccion.setRows(5);
         txtIntroduccion.setToolTipText("");
@@ -190,7 +190,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         txtInfoGral.setEditable(false);
         txtInfoGral.setColumns(20);
         txtInfoGral.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        txtInfoGral.setForeground(new java.awt.Color(255, 255, 255));
+        txtInfoGral.setForeground(new java.awt.Color(51, 51, 51));
         txtInfoGral.setLineWrap(true);
         txtInfoGral.setRows(5);
         txtInfoGral.setWrapStyleWord(true);
@@ -207,6 +207,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         pnlContenedor.add(lblRepercusiones);
         lblRepercusiones.setBounds(480, 90, 107, 17);
 
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Repercusiones.png")));
         jLabel3.setText("jLabel3");
@@ -229,7 +230,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
 
         pnl.add(pnlContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 140, 780, 840));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/InformacionCiudad.png")));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         pnl.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jScrollPane1.setViewportView(pnl);
