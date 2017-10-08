@@ -21,23 +21,23 @@ public class Ciudad implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
+    } 
 
     public String getDescripcion() {
         return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
+        this.descripcion = descripcion; 
+    } 
 
     public String getInfoGral() {
-        return infoGral;
+        return infoGral; 
     }
 
     public void setInfoGral(String infoGral) {
-        this.infoGral = infoGral;
-    }
+        this.infoGral = infoGral; 
+    } 
    
     public ArrayList<ComercioActividad> getActividades() {
         return actividades;
@@ -53,7 +53,7 @@ public class Ciudad implements Serializable {
 
     @Override
     public String toString() {
-        return  nombre;
+        return  nombre; 
     }
     
     public boolean perteneceComercioActividad(TipoCA tipo, ComercioActividad cA){
