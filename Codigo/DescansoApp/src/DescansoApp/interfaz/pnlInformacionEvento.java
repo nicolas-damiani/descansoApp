@@ -62,6 +62,14 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
         txtHoraFin = new javax.swing.JTextField();
         txtHoraInicio = new javax.swing.JTextField();
         lblVolver = new javax.swing.JLabel();
+        lblUbicacion = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblFechaInicio = new javax.swing.JLabel();
+        lblHoraInicio = new javax.swing.JLabel();
+        lblFechaFin = new javax.swing.JLabel();
+        lblHoraFin = new javax.swing.JLabel();
+        lblDescripcion = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(490, 285));
@@ -75,7 +83,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         txtDescripcion.setEditable(false);
         txtDescripcion.setColumns(20);
-        txtDescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(5);
         txtDescripcion.setToolTipText("");
@@ -95,7 +103,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         txtUbicacion.setEditable(false);
         txtUbicacion.setColumns(20);
-        txtUbicacion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtUbicacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtUbicacion.setLineWrap(true);
         txtUbicacion.setRows(5);
         txtUbicacion.setToolTipText("");
@@ -115,7 +123,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         txtFin.setEditable(false);
         txtFin.setColumns(20);
-        txtFin.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtFin.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtFin.setLineWrap(true);
         txtFin.setRows(5);
         txtFin.setToolTipText("");
@@ -135,7 +143,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         txtInicio.setEditable(false);
         txtInicio.setColumns(20);
-        txtInicio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtInicio.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtInicio.setLineWrap(true);
         txtInicio.setRows(5);
         txtInicio.setToolTipText("");
@@ -152,7 +160,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         txtNombre.setEditable(false);
         txtNombre.setColumns(20);
-        txtNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtNombre.setLineWrap(true);
         txtNombre.setRows(5);
         txtNombre.setWrapStyleWord(true);
@@ -161,18 +169,18 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
         add(scroll5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 75, 130, 20));
 
-        txtHoraFin.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtHoraFin.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtHoraFin.setBorder(null);
         txtHoraFin.setOpaque(false);
         add(txtHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 195, 130, 20));
 
-        txtHoraInicio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        txtHoraInicio.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 12)); // NOI18N
         txtHoraInicio.setBorder(null);
         txtHoraInicio.setOpaque(false);
         add(txtHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 135, 130, 20));
 
-        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png"))); // NOI18N
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png")));
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolverMouseClicked(evt);
@@ -180,7 +188,40 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
         });
         add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 28, -1, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/InformacionEvento.png"))); // NOI18N
+        lblUbicacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblUbicacion.setText("Ubicación:");
+        add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, 30));
+
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblNombre.setText("Nombre:");
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, 30));
+
+        lblFechaInicio.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblFechaInicio.setText("  Fecha Inicio:");
+        add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 30));
+
+        lblHoraInicio.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblHoraInicio.setText(" Hora Inicio:");
+        add(lblHoraInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 80, 30));
+
+        lblFechaFin.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblFechaFin.setText("Fecha Fin:");
+        add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 30));
+
+        lblHoraFin.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblHoraFin.setText(" Hora Fin:");
+        add(lblHoraFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 30));
+
+        lblDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 12)); // NOI18N
+        lblDescripcion.setText("Descripción:");
+        add(lblDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
+
+        lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 490, 40));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanas.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -192,7 +233,15 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblFechaFin;
+    private javax.swing.JLabel lblFechaInicio;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblHoraFin;
+    private javax.swing.JLabel lblHoraInicio;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblUbicacion;
     private javax.swing.JLabel lblVolver;
     private javax.swing.JScrollPane scroll1;
     private javax.swing.JScrollPane scroll2;
@@ -209,6 +258,7 @@ public class pnlInformacionEvento extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void cargar() {
+        lblTitulo.setText("Evento: "+evento.getNombre());
         txtNombre.setText(evento.getNombre());
         txtInicio.setText(evento.fechaInicioToString());
         txtHoraInicio.setText(evento.horaInicioToString());

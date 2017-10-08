@@ -63,78 +63,145 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
         cBTipoCA = new javax.swing.JComboBox<>();
         cBCiudad = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
+        lblWeb = new javax.swing.JLabel();
+        lblTelefono1 = new javax.swing.JLabel();
+        lblCiudad = new javax.swing.JLabel();
+        lblUbicacion1 = new javax.swing.JLabel();
+        lblHorario = new javax.swing.JLabel();
+        lblCategoria = new javax.swing.JLabel();
+        lblDetalles = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblTipo = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tFNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFNombre.setText("Nombre");
-        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 178, 30));
+        tFNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 178, 30));
 
+        tFDetalles.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFDetalles.setText("Detalles");
         tFDetalles.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tFDetallesActionPerformed(evt);
             }
         });
-        add(tFDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 178, 30));
+        add(tFDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 178, 30));
 
+        tFCategoria.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFCategoria.setText("Categoria");
-        add(tFCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 178, 30));
+        add(tFCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 178, 30));
 
+        tFUbicacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFUbicacion.setText("Ubicacion");
-        add(tFUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 178, 30));
+        add(tFUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 178, 30));
 
+        tFTelefono.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFTelefono.setText("Telefono");
         tFTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tFTelefonoActionPerformed(evt);
             }
         });
-        add(tFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 178, 30));
+        add(tFTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 420, 178, 30));
 
+        tFWebLink.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFWebLink.setText("Web");
-        add(tFWebLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 178, 30));
+        add(tFWebLink, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, 178, 30));
 
+        tFPrecio.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFPrecio.setText("Precio");
         tFPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tFPrecioActionPerformed(evt);
             }
         });
-        add(tFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 178, 30));
+        add(tFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 178, 30));
 
+        btnAdjuntarImagenes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
+        btnAdjuntarImagenes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdjuntarImagenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdjuntarImagenesActionPerformed(evt);
             }
         });
-        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 178, 30));
+        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 560, 178, 30));
 
+        btnGuardarCA.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnGuardarCA.setText("Guardar");
+        btnGuardarCA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarCA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCAActionPerformed(evt);
             }
         });
-        add(btnGuardarCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 178, 30));
+        add(btnGuardarCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 600, 178, 30));
 
+        tFHorario.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFHorario.setText("Horario");
-        add(tFHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 178, 30));
+        add(tFHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 178, 30));
 
+        cBTipoCA.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         cBTipoCA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cBTipoCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 178, 30));
+        cBTipoCA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(cBTipoCA, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 178, 30));
 
+        cBCiudad.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         cBCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(cBCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 178, 30));
+        cBCiudad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add(cBCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 178, 30));
 
         jLabel1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setText("Nuevo Comercio/Actividad");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 310, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanaVertical.jpg"))); // NOI18N
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 530));
+        lblPrecio.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblPrecio.setText("Precio:");
+        add(lblPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, -1, -1));
+
+        lblWeb.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblWeb.setText("Web:");
+        add(lblWeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, -1, -1));
+
+        lblTelefono1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblTelefono1.setText("Teléfono:");
+        add(lblTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
+
+        lblCiudad.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblCiudad.setText("Ciudad:");
+        add(lblCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+
+        lblUbicacion1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblUbicacion1.setText("Ubicación:");
+        add(lblUbicacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        lblHorario.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblHorario.setText("Horario:");
+        add(lblHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
+
+        lblCategoria.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblCategoria.setText("Categoría:");
+        add(lblCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, -1));
+
+        lblDetalles.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblDetalles.setText("Detalles:");
+        add(lblDetalles, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblNombre.setText("Nombre:");
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
+
+        lblTipo.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 13)); // NOI18N
+        lblTipo.setText("Tipo:");
+        add(lblTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanaVertical.jpg"))); // NOI18N
+        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 680));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tFDetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDetallesActionPerformed
@@ -241,7 +308,17 @@ public class pnlAgregarComercioActividad extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cBCiudad;
     private javax.swing.JComboBox<String> cBTipoCA;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblCategoria;
+    private javax.swing.JLabel lblCiudad;
+    private javax.swing.JLabel lblDetalles;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblHorario;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblPrecio;
+    private javax.swing.JLabel lblTelefono1;
+    private javax.swing.JLabel lblTipo;
+    private javax.swing.JLabel lblUbicacion1;
+    private javax.swing.JLabel lblWeb;
     private javax.swing.JTextField tFCategoria;
     private javax.swing.JTextField tFDetalles;
     private javax.swing.JTextField tFHorario;

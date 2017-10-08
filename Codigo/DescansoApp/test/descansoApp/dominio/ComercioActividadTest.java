@@ -318,4 +318,51 @@ public class ComercioActividadTest {
         int result = ca1.compareTo(ca2);
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testGetTipoCA1(){
+        System.out.println("getTipoCA1");
+        
+        TipoCA expResult = TipoCA.actividad;
+        TipoCA result = ComercioActividad.getTipoCA("Actividad");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetTipoCA2(){
+        System.out.println("getTipoCA2");
+        
+        TipoCA expResult = TipoCA.alojamiento;
+        TipoCA result = ComercioActividad.getTipoCA("Alojamiento");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetTipoCA3(){
+        System.out.println("getTipoCA3");
+        
+        TipoCA expResult = TipoCA.estGastronomico;
+        TipoCA result = ComercioActividad.getTipoCA("E. Gastronomico");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetTipoCA4(){
+        System.out.println("getTipoCA4");
+        
+        TipoCA expResult = TipoCA.otros;
+        TipoCA result = ComercioActividad.getTipoCA("Otros...");
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testGetTipoCA5(){
+        System.out.println("getTipoCA5");
+        
+        TipoCA expResult = null;
+        TipoCA result = ComercioActividad.getTipoCA("asdasdsa");
+        assertEquals(expResult, result);
+    }
+    
+   
 }

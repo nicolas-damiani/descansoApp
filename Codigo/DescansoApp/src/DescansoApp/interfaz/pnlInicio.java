@@ -31,12 +31,13 @@ public class pnlInicio extends javax.swing.JPanel {
         btnMisViajes = new javax.swing.JButton();
         btnAgregarComercioActividad = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnVerTodas = new javax.swing.JButton();
         lblImagen = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(840, 500));
         setLayout(null);
 
-        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Lupa.png")));
+        lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/LupaInicio.png")));
         lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -44,7 +45,7 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(lblBuscar);
-        lblBuscar.setBounds(610, 230, 30, 30);
+        lblBuscar.setBounds(600, 180, 60, 50);
 
         txtBuscador.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 18)); // NOI18N
         txtBuscador.setForeground(new java.awt.Color(51, 51, 51));
@@ -61,9 +62,10 @@ public class pnlInicio extends javax.swing.JPanel {
             }
         });
         add(txtBuscador);
-        txtBuscador.setBounds(230, 220, 370, 50);
+        txtBuscador.setBounds(220, 180, 370, 50);
 
         btnNuevoViaje.setText("Nuevo Viaje");
+        btnNuevoViaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNuevoViaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoViajeActionPerformed(evt);
@@ -73,6 +75,7 @@ public class pnlInicio extends javax.swing.JPanel {
         btnNuevoViaje.setBounds(190, 320, 200, 50);
 
         btnAgregarCiudad.setText("Agregar Ciudad");
+        btnAgregarCiudad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarCiudadActionPerformed(evt);
@@ -82,6 +85,7 @@ public class pnlInicio extends javax.swing.JPanel {
         btnAgregarCiudad.setBounds(190, 390, 200, 50);
 
         btnMisViajes.setText("Mis Viajes");
+        btnMisViajes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMisViajes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMisViajesActionPerformed(evt);
@@ -91,6 +95,7 @@ public class pnlInicio extends javax.swing.JPanel {
         btnMisViajes.setBounds(430, 320, 200, 50);
 
         btnAgregarComercioActividad.setText("Agregar Comercio/Actividad");
+        btnAgregarComercioActividad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarComercioActividad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarComercioActividadActionPerformed(evt);
@@ -104,6 +109,16 @@ public class pnlInicio extends javax.swing.JPanel {
         jLabel1.setText("DescansoApp");
         add(jLabel1);
         jLabel1.setBounds(230, 50, 370, 120);
+
+        btnVerTodas.setText("Ver todas las ciudades");
+        btnVerTodas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVerTodas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerTodasActionPerformed(evt);
+            }
+        });
+        add(btnVerTodas);
+        btnVerTodas.setBounds(310, 250, 200, 50);
 
         lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         lblImagen.setPreferredSize(new java.awt.Dimension(800, 450));
@@ -171,6 +186,12 @@ public class pnlInicio extends javax.swing.JPanel {
         p.setVisible(true);
     }//GEN-LAST:event_btnAgregarComercioActividadActionPerformed
 
+    private void btnVerTodasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTodasActionPerformed
+        padre.remove(this);
+        padre.add(new pnlResultadoBusqueda(modelo, padre, "todas"), BorderLayout.WEST);
+        padre.pack();
+    }//GEN-LAST:event_btnVerTodasActionPerformed
+
     private void buscar() {
         if (txtBuscador.getText().length() <= 3) {
             JOptionPane.showMessageDialog(this, "Debe ingresar una palabra clave (más de tres letras) en el cuadro de busqueda", "Busqueda Vacía", JOptionPane.INFORMATION_MESSAGE);
@@ -186,6 +207,7 @@ public class pnlInicio extends javax.swing.JPanel {
     private javax.swing.JButton btnAgregarComercioActividad;
     private javax.swing.JButton btnMisViajes;
     private javax.swing.JButton btnNuevoViaje;
+    private javax.swing.JButton btnVerTodas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblBuscar;
     private javax.swing.JLabel lblImagen;

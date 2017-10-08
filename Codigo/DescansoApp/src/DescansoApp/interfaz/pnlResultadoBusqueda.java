@@ -41,7 +41,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png")));
-        lblHome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblHome.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblHomeMouseClicked(evt);
@@ -50,7 +50,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         add(lblHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 38, 30, 30));
 
         lblBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Lupa.png")));
-        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblBuscarMouseClicked(evt);
@@ -97,7 +97,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
 
         scroll.setViewportView(pnlResultados);
 
-        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 770, 370));
+        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 770, 370));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -137,30 +137,33 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         pnlResultados.removeAll();
         pnlResultados.revalidate();
         pnlResultados.repaint();
+        ArrayList<descansoApp.dominio.Ciudad> resultados = new ArrayList<>();
 
         Buscador bus = new Buscador(modelo.getListaCiudades());
-        ArrayList<descansoApp.dominio.Ciudad> resultados = bus.buscar(unaPalabra);
+        if (unaPalabra.compareTo("todas") != 0) {
+            resultados = bus.buscar(unaPalabra);
+        } else {
+            resultados = modelo.getListaCiudades();
+        }
 
         int cantResultados = resultados.size();
         if (cantResultados > 0) {
             scroll.setVisible(true);
             lblNoHay.setVisible(false);
-            
+            pnlResultados.setLayout(new BoxLayout(pnlResultados, BoxLayout.Y_AXIS));
+            pnlResultados.setVisible(true);
             for (int i = 0; i < cantResultados; i++) {
                 pResultado pr = new pResultado(modelo, resultados.get(i), padre, this);
-                
-                pnlResultados.setLayout(new java.awt.BorderLayout());
+
                 pnlResultados.add(pr);
                 pr.setVisible(true);
-                pnlResultados.setVisible(true);
                 pnlResultados.revalidate();
                 pnlResultados.repaint();
             }
-        }
-        else {
+        } else {
             scroll.setVisible(false);
             lblNoHay.setVisible(true);
-        } 
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblBuscar;

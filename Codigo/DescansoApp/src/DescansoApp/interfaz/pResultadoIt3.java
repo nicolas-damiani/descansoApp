@@ -54,7 +54,7 @@ public class pResultadoIt3 extends javax.swing.JPanel {
         lblUbicacion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         lblUbicacion.setText("(Ubicacion)");
 
-        lblEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Editar.png"))); // NOI18N
+        lblEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Editar.png")));
         lblEditar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

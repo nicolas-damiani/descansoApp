@@ -20,6 +20,17 @@ public class CiudadTest {
         String result = instance.getNombre();
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testToString() {
+        System.out.println("ToString");
+        String nombre = "Fray Bentos";
+        Ciudad instance = new Ciudad(nombre, "");
+
+        String expResult = "Fray Bentos";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+    }
 
     @Test
     public void testSetNombre() {
@@ -81,7 +92,7 @@ public class CiudadTest {
     }
 
     @Test
-    public void testPerteneceComercioActividad() {
+    public void testPerteneceComercioActividad1() {
         System.out.println("Pertenece Comercio Actividad (comercioActividad no pertenece a la ciudad)");
         ComercioActividad cA = new ComercioActividad();
         cA.setNombre("alojamiento");
@@ -91,17 +102,40 @@ public class CiudadTest {
         boolean result = instance.perteneceComercioActividad(TipoCA.alojamiento, cA);
         assertEquals(expResult, result);
     }
-
+    
     @Test
     public void testPerteneceComercioActividad2() {
-        System.out.println("Pertenece Comercio Actividad 2(comercioActividad pertenece a la ciudad)");
+        System.out.println("Pertenece Comercio Actividad (comercioActividad no pertenece a la ciudad)");
         ComercioActividad cA = new ComercioActividad();
-        cA.setNombre("alojamiento");
+        cA.setNombre("estGastronomico");
         Ciudad instance = new Ciudad();
-        instance.agregarComercioActividad(TipoCA.alojamiento, cA);
 
-        boolean expResult = true;
-        boolean result = instance.perteneceComercioActividad(TipoCA.alojamiento, cA);
+        boolean expResult = false;
+        boolean result = instance.perteneceComercioActividad(TipoCA.estGastronomico, cA);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testPerteneceComercioActividad3() {
+        System.out.println("Pertenece Comercio Actividad (comercioActividad no pertenece a la ciudad)");
+        ComercioActividad cA = new ComercioActividad();
+        cA.setNombre("actividad");
+        Ciudad instance = new Ciudad();
+
+        boolean expResult = false;
+        boolean result = instance.perteneceComercioActividad(TipoCA.actividad, cA);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testPerteneceComercioActividad4() {
+        System.out.println("Pertenece Comercio Actividad (comercioActividad no pertenece a la ciudad)");
+        ComercioActividad cA = new ComercioActividad();
+        cA.setNombre("actividad");
+        Ciudad instance = new Ciudad();
+
+        boolean expResult = false;
+        boolean result = instance.perteneceComercioActividad(TipoCA.otros, cA);
         assertEquals(expResult, result);
     }
 
