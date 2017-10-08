@@ -36,6 +36,8 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         chooser = new JFileChooser();
         modelo = unModelo;
         miVentana = unContenedor;
+        tAInfoGeneral.setLineWrap(true);
+        tADescripcion.setLineWrap(true);
         this.ciudad = new Ciudad();
     }
 
@@ -52,13 +54,15 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         btnAdjuntarImagenes = new javax.swing.JButton();
         btnAgregarMapa = new javax.swing.JButton();
         tFNombre = new javax.swing.JTextField();
-        tFDescripcion = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tAInfoGeneral = new javax.swing.JTextArea();
         btnGuardarCiudad = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblDescripcion = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tADescripcion = new javax.swing.JTextArea();
+        lblInfoGeneral = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(200, 200));
@@ -66,21 +70,23 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
 
         btnAdjuntarImagenes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnAdjuntarImagenes.setText("Adjuntar Imagenes");
+        btnAdjuntarImagenes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdjuntarImagenes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdjuntarImagenesActionPerformed(evt);
             }
         });
-        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, -1));
+        add(btnAdjuntarImagenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, -1));
 
         btnAgregarMapa.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnAgregarMapa.setText("Agregar Mapa");
+        btnAgregarMapa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAgregarMapa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarMapaActionPerformed(evt);
             }
         });
-        add(btnAgregarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 141, -1));
+        add(btnAgregarMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 141, -1));
 
         tFNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         tFNombre.setText("Nombre");
@@ -89,16 +95,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
                 tFNombreActionPerformed(evt);
             }
         });
-        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 140, -1));
-
-        tFDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
-        tFDescripcion.setText("Descripcion");
-        tFDescripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tFDescripcionActionPerformed(evt);
-            }
-        });
-        add(tFDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 140, -1));
+        add(tFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 140, -1));
 
         tAInfoGeneral.setColumns(20);
         tAInfoGeneral.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
@@ -106,42 +103,50 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         tAInfoGeneral.setText("Info General");
         jScrollPane1.setViewportView(tAInfoGeneral);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 170, 120));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 140, 70));
 
         btnGuardarCiudad.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         btnGuardarCiudad.setText("Guardar");
+        btnGuardarCiudad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGuardarCiudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarCiudadActionPerformed(evt);
             }
         });
-        add(btnGuardarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+        add(btnGuardarCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Nueva Ciudad");
-        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 270, 40));
+        add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 280, 40));
 
         lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
         lblNombre.setText("Nombre:");
-        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         lblDescripcion.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
-        lblDescripcion.setText("Descripción:");
-        add(lblDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        lblDescripcion.setText("Info. General:");
+        add(lblDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanas.jpg"))); // NOI18N
-        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 270));
+        tADescripcion.setColumns(20);
+        tADescripcion.setRows(5);
+        jScrollPane2.setViewportView(tADescripcion);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 140, 70));
+
+        lblInfoGeneral.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        lblInfoGeneral.setText("Descripción:");
+        add(lblInfoGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanaVertical.jpg"))); // NOI18N
+        add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 410));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tFDescripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tFDescripcionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tFDescripcionActionPerformed
 
     private void btnGuardarCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCiudadActionPerformed
         if (verificarCampos()){
             this.ciudad.setNombre(tFNombre.getText());
-            this.ciudad.setDescripcion(tFDescripcion.getText());
+            this.ciudad.setDescripcion(tADescripcion.getText());
             this.ciudad.setInfoGral(tAInfoGeneral.getText());
             modelo.agregarCiudad(this.ciudad);
             JOptionPane.showMessageDialog(this, "Ciudad correctamente agregada.");
@@ -211,7 +216,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         if(tFNombre.getText().isEmpty()){
             sinErrores = false;
            errores.add("Nombre");
-        }if(tFDescripcion.getText().isEmpty()){
+        }if(tADescripcion.getText().isEmpty()){
             sinErrores = false;
            errores.add("Descripción");
         }if(tAInfoGeneral.getText().isEmpty()){
@@ -228,12 +233,14 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardarCiudad;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblDescripcion;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblInfoGeneral;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextArea tADescripcion;
     private javax.swing.JTextArea tAInfoGeneral;
-    private javax.swing.JTextField tFDescripcion;
     private javax.swing.JTextField tFNombre;
     // End of variables declaration//GEN-END:variables
 }

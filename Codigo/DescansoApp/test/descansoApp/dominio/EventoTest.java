@@ -338,4 +338,61 @@ public class EventoTest {
         int result = e1.compareTo(e2);
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testOverlappingEventsTrue() throws Exception {
+        System.out.println("testOverlappingEventsTrue");
+        Evento e1 = new Evento();
+        Calendar f1 = new GregorianCalendar(2018, 9, 4, 12, 00);
+        Calendar f2 = new GregorianCalendar(2018, 9, 4, 13, 00);
+        e1.setFechaHoraI(f1);
+        e1.setFechaHoraF(f1,f2);
+        Evento e2 = new Evento();
+        Calendar f3 = new GregorianCalendar(2018, 9, 4, 12, 30);
+        Calendar f4 = new GregorianCalendar(2018, 9, 4, 13, 30);
+        e2.setFechaHoraI(f3);
+        e2.setFechaHoraF(f3,f4);
+
+        boolean expResult = true;
+        boolean result = Evento.overlappingEvents(e1, e2);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testOverlappingEventsFalse1() throws Exception {
+        System.out.println("testOverlappingEventsFalse1");
+        Evento e1 = new Evento();
+        Calendar f1 = new GregorianCalendar(2018, 9, 4, 12, 00);
+        Calendar f2 = new GregorianCalendar(2018, 9, 4, 13, 00);
+        e1.setFechaHoraI(f1);
+        e1.setFechaHoraF(f1,f2);
+        Evento e2 = new Evento();
+        Calendar f3 = new GregorianCalendar(2018, 9, 4, 13, 30);
+        Calendar f4 = new GregorianCalendar(2018, 9, 4, 14, 30);
+        e2.setFechaHoraI(f3);
+        e2.setFechaHoraF(f3,f4);
+
+        boolean expResult = false;
+        boolean result = Evento.overlappingEvents(e1, e2);
+        assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testOverlappingEventsFalse2() throws Exception {
+        System.out.println("testOverlappingEventsFalse2");
+        Evento e1 = new Evento();
+        Calendar f1 = new GregorianCalendar(2018, 9, 4, 13, 00);
+        Calendar f2 = new GregorianCalendar(2018, 9, 4, 14, 00);
+        e1.setFechaHoraI(f1);
+        e1.setFechaHoraF(f1,f2);
+        Evento e2 = new Evento();
+        Calendar f3 = new GregorianCalendar(2018, 9, 4, 11, 30);
+        Calendar f4 = new GregorianCalendar(2018, 9, 4, 12, 30);
+        e2.setFechaHoraI(f3);
+        e2.setFechaHoraF(f3,f4);
+
+        boolean expResult = false;
+        boolean result = Evento.overlappingEvents(e1, e2);
+        assertEquals(expResult, result);
+    }
 }

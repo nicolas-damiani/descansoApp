@@ -103,7 +103,8 @@ public class Evento implements Serializable, Comparable<Evento> {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        String unaDescripcion = "";
+        this.descripcion = unaDescripcion;
     }
 
     public String getUbicacion() {

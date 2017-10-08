@@ -72,10 +72,11 @@ public class pnlItinerario extends javax.swing.JPanel {
 
         add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 440, 190));
 
-        lblNombre.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(51, 51, 51));
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(102, 102, 255));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("Nombre del Viaje");
-        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 19, 410, 30));
+        add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 19, 490, 30));
 
         lblNoHay.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblNoHay.setForeground(new java.awt.Color(255, 255, 255));
