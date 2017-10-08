@@ -66,6 +66,14 @@ public class pnlEvento extends javax.swing.JPanel {
         lblGuardar = new javax.swing.JLabel();
         lblEliminar1 = new javax.swing.JLabel();
         lblVolver = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(490, 285));
@@ -79,22 +87,26 @@ public class pnlEvento extends javax.swing.JPanel {
         txtDescripcion.setLineWrap(true);
         txtDescripcion.setRows(5);
         txtDescripcion.setWrapStyleWord(true);
-        txtDescripcion.setBorder(null);
+        txtDescripcion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(txtDescripcion);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 200, 150));
 
-        txtNombre.setBorder(null);
+        txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
         add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, 18));
+
+        dChosserFechaI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(dChosserFechaI, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, -1));
+
+        dChosserFechaF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         add(dChosserFechaF, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 130, -1));
 
-        txtHoraIMinutos.setBorder(null);
+        txtHoraIMinutos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtHoraIMinutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraIMinutosActionPerformed(evt);
@@ -102,7 +114,7 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(txtHoraIMinutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 19, 18));
 
-        txtUbicacion.setBorder(null);
+        txtUbicacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUbicacionActionPerformed(evt);
@@ -116,7 +128,7 @@ public class pnlEvento extends javax.swing.JPanel {
         jLabel5.setText(" :");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 10, 20));
 
-        txtHoraFHoras.setBorder(null);
+        txtHoraFHoras.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtHoraFHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraFHorasActionPerformed(evt);
@@ -124,7 +136,7 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(txtHoraFHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 19, 18));
 
-        txtHoraIHoras.setBorder(null);
+        txtHoraIHoras.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtHoraIHoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraIHorasActionPerformed(evt);
@@ -132,7 +144,7 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(txtHoraIHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 19, 18));
 
-        txtHoraFMinutos.setBorder(null);
+        txtHoraFMinutos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtHoraFMinutos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtHoraFMinutosActionPerformed(evt);
@@ -140,8 +152,8 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(txtHoraFMinutos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 19, 18));
 
-        lblGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGuardar.png"))); // NOI18N
-        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGuardar.png")));
+        lblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblGuardarMouseClicked(evt);
@@ -155,8 +167,8 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(lblGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 250, -1, 30));
 
-        lblEliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Eliminar.png"))); // NOI18N
-        lblEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblEliminar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Eliminar.png")));
+        lblEliminar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblEliminar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblEliminar1MouseClicked(evt);
@@ -170,8 +182,8 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(lblEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, -1, 30));
 
-        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png"))); // NOI18N
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png")));
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolverMouseClicked(evt);
@@ -179,7 +191,47 @@ public class pnlEvento extends javax.swing.JPanel {
         });
         add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 28, -1, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/AgregarEvento.png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Ubicación:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel3.setText("Nuevo Evento");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 170, -1));
+
+        jLabel4.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Fecha Inicio:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Hora Inicio:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Fecha Fin:");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Hora Fin:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 50, -1));
+
+        jLabel9.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Descripción:");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Nombre:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoVentanas.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -353,7 +405,15 @@ public class pnlEvento extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser dChosserFechaF;
     private com.toedter.calendar.JDateChooser dChosserFechaI;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEliminar1;
     private javax.swing.JLabel lblFondo;

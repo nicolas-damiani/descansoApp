@@ -142,7 +142,7 @@ public class pnlAgregarCiudad extends javax.swing.JPanel {
         if (verificarCampos()){
             this.ciudad.setNombre(tFNombre.getText());
             this.ciudad.setDescripcion(tFDescripcion.getText());
-            this.ciudad.setDescripcion(tFDescripcion.getText());
+            this.ciudad.setInfoGral(tAInfoGeneral.getText());
             modelo.agregarCiudad(this.ciudad);
             JOptionPane.showMessageDialog(this, "Ciudad correctamente agregada.");
             miVentana.dispose();

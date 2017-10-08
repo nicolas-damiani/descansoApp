@@ -55,10 +55,9 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         txtIntroduccion = new javax.swing.JTextArea();
         scroll2 = new javax.swing.JScrollPane();
         txtInfoGral = new javax.swing.JTextArea();
-        lblRepercusiones = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -74,10 +73,11 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         });
         pnl.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 38, 30, 30));
 
-        lblNombreCiudad.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
-        lblNombreCiudad.setForeground(new java.awt.Color(51, 51, 51));
+        lblNombreCiudad.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 26)); // NOI18N
+        lblNombreCiudad.setForeground(new java.awt.Color(102, 102, 255));
+        lblNombreCiudad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombreCiudad.setText("Nombre de la Ciudad");
-        pnl.add(lblNombreCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 36, -1, -1));
+        pnl.add(lblNombreCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
 
         lblDondeDorimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeDormir.png")));
         lblDondeDorimir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -92,7 +92,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
                 lblDondeDorimirMouseExited(evt);
             }
         });
-        pnl.add(lblDondeDorimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 87, -1, -1));
+        pnl.add(lblDondeDorimir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 160, 30));
 
         lblDondeComer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnDondeComer.png")));
         lblDondeComer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -107,7 +107,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
                 lblDondeComerMouseExited(evt);
             }
         });
-        pnl.add(lblDondeComer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 87, 150, 30));
+        pnl.add(lblDondeComer, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 180, 30));
 
         lblQueHacer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueHacer.png")));
         lblQueHacer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -122,7 +122,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
                 lblQueHacerMouseExited(evt);
             }
         });
-        pnl.add(lblQueHacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 87, -1, -1));
+        pnl.add(lblQueHacer, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 180, 30));
 
         lblQueEstaCerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnQueEstaCerca.png")));
         lblQueEstaCerca.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -137,35 +137,37 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
                 lblQueEstaCercaMouseExited(evt);
             }
         });
-        pnl.add(lblQueEstaCerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 87, 150, -1));
+        pnl.add(lblQueEstaCerca, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 170, 30));
 
         pnlContenedor.setOpaque(false);
         pnlContenedor.setLayout(null);
 
-        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriader.png"))); // NOI18N
+        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblSiguienteMouseClicked(evt);
             }
         });
         pnlContenedor.add(lblSiguiente);
-        lblSiguiente.setBounds(420, 700, 0, 20);
+        lblSiguiente.setBounds(720, 250, 26, 20);
 
-        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriaIzq.png"))); // NOI18N
+        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblAnterior.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAnteriorMouseClicked(evt);
             }
         });
         pnlContenedor.add(lblAnterior);
-        lblAnterior.setBounds(0, 700, 0, 0);
+        lblAnterior.setBounds(380, 250, 26, 21);
 
         lblGaleria.setText(" ");
         lblGaleria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         lblGaleria.setMinimumSize(new java.awt.Dimension(450, 280));
         lblGaleria.setPreferredSize(new java.awt.Dimension(450, 280));
         pnlContenedor.add(lblGaleria);
-        lblGaleria.setBounds(0, 560, 450, 280);
+        lblGaleria.setBounds(370, 120, 390, 280);
 
         scroll1.setMaximumSize(new java.awt.Dimension(162, 80));
         scroll1.setMinimumSize(new java.awt.Dimension(162, 80));
@@ -185,7 +187,7 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         scroll1.setViewportView(txtIntroduccion);
 
         pnlContenedor.add(scroll1);
-        scroll1.setBounds(0, 0, 780, 80);
+        scroll1.setBounds(10, 20, 750, 80);
 
         txtInfoGral.setEditable(false);
         txtInfoGral.setColumns(20);
@@ -199,36 +201,27 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         scroll2.setViewportView(txtInfoGral);
 
         pnlContenedor.add(scroll2);
-        scroll2.setBounds(0, 90, 450, 460);
+        scroll2.setBounds(10, 120, 340, 280);
 
-        lblRepercusiones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblRepercusiones.setForeground(new java.awt.Color(255, 255, 255));
-        lblRepercusiones.setText("Repercusiones");
-        pnlContenedor.add(lblRepercusiones);
-        lblRepercusiones.setBounds(480, 90, 107, 17);
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel1.setText("Información General:");
+        pnlContenedor.add(jLabel1);
+        jLabel1.setBounds(10, 100, 140, 18);
 
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Repercusiones.png")));
-        jLabel3.setText("jLabel3");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        pnlContenedor.add(jLabel3);
-        jLabel3.setBounds(470, 70, 310, 760);
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("1985");
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel2.setText("Decripción:");
         pnlContenedor.add(jLabel2);
-        jLabel2.setBounds(640, 90, 32, 17);
+        jLabel2.setBounds(10, 0, 62, 18);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("875");
-        pnlContenedor.add(jLabel4);
-        jLabel4.setBounds(720, 90, 24, 17);
+        jLabel3.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel3.setText("Galería de imágenes:");
+        pnlContenedor.add(jLabel3);
+        jLabel3.setBounds(370, 100, 140, 18);
 
-        pnl.add(pnlContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 140, 780, 840));
+        pnl.add(pnlContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 130, 780, 420));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         pnl.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -239,13 +232,11 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 857, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 849, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 587, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,9 +329,9 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAnterior;
     private javax.swing.JLabel lblDondeComer;
@@ -350,7 +341,6 @@ public class pnlInformacionCiudad extends javax.swing.JPanel {
     private javax.swing.JLabel lblNombreCiudad;
     private javax.swing.JLabel lblQueEstaCerca;
     private javax.swing.JLabel lblQueHacer;
-    private javax.swing.JLabel lblRepercusiones;
     private javax.swing.JLabel lblSiguiente;
     private javax.swing.JLabel lblVolver;
     private javax.swing.JPanel pnl;

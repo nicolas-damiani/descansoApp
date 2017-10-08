@@ -43,8 +43,8 @@ public class pResultadoDondeQue extends javax.swing.JPanel {
 
         setOpaque(false);
 
-        lblNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lblNombre.setForeground(new java.awt.Color(0, 51, 204));
+        lblNombre.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 14)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(102, 102, 255));
         lblNombre.setText("Nombre de DondeQue");
         lblNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblNombre.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -58,8 +58,8 @@ public class pResultadoDondeQue extends javax.swing.JPanel {
 
         txtDes.setEditable(false);
         txtDes.setColumns(20);
-        txtDes.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        txtDes.setForeground(new java.awt.Color(255, 255, 255));
+        txtDes.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 11)); // NOI18N
+        txtDes.setForeground(new java.awt.Color(51, 51, 51));
         txtDes.setLineWrap(true);
         txtDes.setRows(5);
         txtDes.setWrapStyleWord(true);
