@@ -71,8 +71,8 @@ public class pnlDondeQue extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png"))); // NOI18N
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png")));
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -82,15 +82,15 @@ public class pnlDondeQue extends javax.swing.JPanel {
 
         scroll2.setHorizontalScrollBar(null);
 
-        lstFiltros.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        lstFiltros.setForeground(new java.awt.Color(255, 255, 255));
+        lstFiltros.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 14)); // NOI18N
+        lstFiltros.setForeground(new java.awt.Color(51, 51, 51));
         lstFiltros.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
         lstFiltros.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        lstFiltros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lstFiltros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lstFiltros.setOpaque(false);
         lstFiltros.setSelectionBackground(new java.awt.Color(0, 0, 0));
         lstFiltros.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -119,12 +119,13 @@ public class pnlDondeQue extends javax.swing.JPanel {
 
         add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 620, 370));
 
-        lblTitulo.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 26)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
         lblTitulo.setText("TITULO");
         add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 36, 240, 30));
 
-        lblVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png"))); // NOI18N
-        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png")));
+        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolver1MouseClicked(evt);
@@ -132,7 +133,7 @@ public class pnlDondeQue extends javax.swing.JPanel {
         });
         add(lblVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 38, 30, 30));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Fondo.png"))); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 

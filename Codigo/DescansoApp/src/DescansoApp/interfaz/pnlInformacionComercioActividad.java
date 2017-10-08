@@ -52,9 +52,6 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        lblRepercusiones = new javax.swing.JLabel();
         scroll1 = new javax.swing.JScrollPane();
         txtIntroduccion = new javax.swing.JTextArea();
         lblNombreEst = new javax.swing.JLabel();
@@ -64,7 +61,6 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         lblAnterior = new javax.swing.JLabel();
         scroll = new javax.swing.JScrollPane();
         txtHorarios = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
         lblGaleria = new javax.swing.JLabel();
         lblHorarios = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
@@ -80,6 +76,8 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         lblBoton = new javax.swing.JLabel();
         lblpagina = new javax.swing.JLabel();
         lblVolver1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         lblFondo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(840, 500));
@@ -94,21 +92,6 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         jPanel1.setPreferredSize(new java.awt.Dimension(840, 688));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("875");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 202, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("1985");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 202, -1, -1));
-
-        lblRepercusiones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblRepercusiones.setForeground(new java.awt.Color(255, 255, 255));
-        lblRepercusiones.setText("Repercusiones");
-        jPanel1.add(lblRepercusiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
-
         scroll1.setMaximumSize(new java.awt.Dimension(162, 80));
         scroll1.setMinimumSize(new java.awt.Dimension(162, 80));
         scroll1.setPreferredSize(new java.awt.Dimension(162, 80));
@@ -116,7 +99,7 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         txtIntroduccion.setEditable(false);
         txtIntroduccion.setColumns(20);
         txtIntroduccion.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        txtIntroduccion.setForeground(new java.awt.Color(255, 255, 255));
+        txtIntroduccion.setForeground(new java.awt.Color(51, 51, 51));
         txtIntroduccion.setLineWrap(true);
         txtIntroduccion.setRows(5);
         txtIntroduccion.setWrapStyleWord(true);
@@ -126,23 +109,24 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
 
         jPanel1.add(scroll1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 770, 90));
 
-        lblNombreEst.setFont(new java.awt.Font("Arial", 0, 26)); // NOI18N
+        lblNombreEst.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 26)); // NOI18N
+        lblNombreEst.setForeground(new java.awt.Color(102, 102, 255));
         lblNombreEst.setText("Nombre Establecimiento");
         jPanel1.add(lblNombreEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 36, 400, 30));
 
-        lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriader.png"))); // NOI18N
-        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSiguiente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriader.png")));
+        lblSiguiente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblSiguienteMouseClicked(evt);
             }
         });
-        jPanel1.add(lblSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, -1, 20));
+        jPanel1.add(lblSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 20, 20));
 
         jPanel1.add(comboViajes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 260, 22));
 
-        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png"))); // NOI18N
-        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnVolver.png")));
+        lblVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolverMouseClicked(evt);
@@ -150,120 +134,113 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         });
         jPanel1.add(lblVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 38, 30, 30));
 
-        lblAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriaIzq.png"))); // NOI18N
-        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAnterior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnGaleriaIzq.png")));
+        lblAnterior.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAnterior.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblAnteriorMouseClicked(evt);
             }
         });
-        jPanel1.add(lblAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
+        jPanel1.add(lblAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 30, 20));
 
         scroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txtHorarios.setEditable(false);
         txtHorarios.setColumns(20);
-        txtHorarios.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtHorarios.setForeground(new java.awt.Color(255, 255, 255));
+        txtHorarios.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtHorarios.setForeground(new java.awt.Color(51, 51, 51));
         txtHorarios.setLineWrap(true);
         txtHorarios.setRows(5);
         txtHorarios.setWrapStyleWord(true);
         txtHorarios.setHighlighter(null);
         scroll.setViewportView(txtHorarios);
 
-        jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 202, 340, 20));
-
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/Repercusiones.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 182, 310, 470));
+        jPanel1.add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 300, 20));
 
         lblGaleria.setText(" ");
         lblGaleria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         lblGaleria.setMinimumSize(new java.awt.Dimension(450, 280));
         lblGaleria.setPreferredSize(new java.awt.Dimension(450, 280));
-        jPanel1.add(lblGaleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+        jPanel1.add(lblGaleria, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 370, 250));
 
-        lblHorarios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblHorarios.setForeground(new java.awt.Color(255, 255, 255));
+        lblHorarios.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        lblHorarios.setForeground(new java.awt.Color(51, 51, 51));
         lblHorarios.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblHorarios.setText("Horarios: ");
-        jPanel1.add(lblHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 100, 20));
+        jPanel1.add(lblHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 100, 20));
 
-        lblTelefono.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblTelefono.setForeground(new java.awt.Color(255, 255, 255));
+        lblTelefono.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(51, 51, 51));
         lblTelefono.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTelefono.setText("Teléfono: ");
-        jPanel1.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 100, 20));
+        jPanel1.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 100, 20));
 
-        lblWeb.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblWeb.setForeground(new java.awt.Color(255, 255, 255));
+        lblWeb.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        lblWeb.setForeground(new java.awt.Color(51, 51, 51));
         lblWeb.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblWeb.setText("Página Web: ");
-        jPanel1.add(lblWeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 100, -1));
+        jPanel1.add(lblWeb, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 100, -1));
 
         scroll2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txtTelefono.setEditable(false);
         txtTelefono.setColumns(20);
-        txtTelefono.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTelefono.setForeground(new java.awt.Color(255, 255, 255));
+        txtTelefono.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(51, 51, 51));
         txtTelefono.setLineWrap(true);
         txtTelefono.setRows(5);
         txtTelefono.setWrapStyleWord(true);
         txtTelefono.setHighlighter(null);
         scroll2.setViewportView(txtTelefono);
 
-        jPanel1.add(scroll2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 232, 340, 20));
+        jPanel1.add(scroll2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 300, 20));
 
-        lblPrecio1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblPrecio1.setForeground(new java.awt.Color(255, 255, 255));
+        lblPrecio1.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        lblPrecio1.setForeground(new java.awt.Color(51, 51, 51));
         lblPrecio1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPrecio1.setText("Precio: ");
-        jPanel1.add(lblPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 100, 20));
+        jPanel1.add(lblPrecio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 100, 20));
 
         scroll5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txtPrecio.setEditable(false);
         txtPrecio.setColumns(20);
-        txtPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtPrecio.setForeground(new java.awt.Color(255, 255, 255));
+        txtPrecio.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtPrecio.setForeground(new java.awt.Color(51, 51, 51));
         txtPrecio.setLineWrap(true);
         txtPrecio.setRows(5);
         txtPrecio.setWrapStyleWord(true);
         txtPrecio.setHighlighter(null);
         scroll5.setViewportView(txtPrecio);
 
-        jPanel1.add(scroll5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 262, 340, 20));
+        jPanel1.add(scroll5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 300, 20));
 
-        lblUbicacion.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblUbicacion.setForeground(new java.awt.Color(255, 255, 255));
+        lblUbicacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        lblUbicacion.setForeground(new java.awt.Color(51, 51, 51));
         lblUbicacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblUbicacion.setText("Ubicación: ");
-        jPanel1.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 100, 20));
+        jPanel1.add(lblUbicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 100, 20));
 
         scroll4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scroll4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         txtUbicacion.setEditable(false);
         txtUbicacion.setColumns(20);
-        txtUbicacion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtUbicacion.setForeground(new java.awt.Color(255, 255, 255));
+        txtUbicacion.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
+        txtUbicacion.setForeground(new java.awt.Color(51, 51, 51));
         txtUbicacion.setLineWrap(true);
         txtUbicacion.setRows(5);
         txtUbicacion.setWrapStyleWord(true);
         txtUbicacion.setHighlighter(null);
         scroll4.setViewportView(txtUbicacion);
 
-        jPanel1.add(scroll4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 292, 340, 20));
+        jPanel1.add(scroll4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 300, 20));
 
-        lblBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnPlus.png"))); // NOI18N
-        lblBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBoton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnPlus.png")));
+        lblBoton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblBoton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblBotonMouseClicked(evt);
@@ -277,19 +254,19 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         });
         jPanel1.add(lblBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 37, -1, 30));
 
-        lblpagina.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        lblpagina.setFont(new java.awt.Font("Leelawadee UI Semilight", 1, 14)); // NOI18N
         lblpagina.setForeground(new java.awt.Color(0, 51, 204));
-        lblpagina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblpagina.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblpagina.setMaximumSize(new java.awt.Dimension(999, 999));
         lblpagina.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblpaginaMouseClicked(evt);
             }
         });
-        jPanel1.add(lblpagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 318, 340, 20));
+        jPanel1.add(lblpagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 300, 20));
 
-        lblVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png"))); // NOI18N
-        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/btnHome.png")));
+        lblVolver1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblVolver1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblVolver1MouseClicked(evt);
@@ -297,7 +274,17 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         });
         jPanel1.add(lblVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 38, 30, 30));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/InformacionComercioActividad.png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel2.setText("Información:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 13)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
+        jLabel1.setText("Descripción:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, 20));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/descansoApp/imagenes/fondoInicio2.jpg")));
         jPanel1.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jScrollPane1.setViewportView(jPanel1);
@@ -310,7 +297,9 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -380,9 +369,8 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox comboViajes;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAnterior;
@@ -392,7 +380,6 @@ public class pnlInformacionComercioActividad extends javax.swing.JPanel {
     private javax.swing.JLabel lblHorarios;
     private javax.swing.JLabel lblNombreEst;
     private javax.swing.JLabel lblPrecio1;
-    private javax.swing.JLabel lblRepercusiones;
     private javax.swing.JLabel lblSiguiente;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblUbicacion;

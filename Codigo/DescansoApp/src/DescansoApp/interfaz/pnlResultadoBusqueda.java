@@ -58,7 +58,7 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         });
         add(lblBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(787, 38, 20, 20));
 
-        txtBuscador.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        txtBuscador.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 11)); // NOI18N
         txtBuscador.setBorder(null);
         txtBuscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +77,8 @@ public class pnlResultadoBusqueda extends javax.swing.JPanel {
         lblNoHay.setText("No hay resultados para la búsqueda realizada, vuelva a intentarlo ...");
         add(lblNoHay, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 130, -1, -1));
 
-        lblTitulo.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Leelawadee UI Semilight", 0, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(102, 102, 255));
         lblTitulo.setText("Resultados de la búsqueda");
         add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 38, -1, -1));
 
